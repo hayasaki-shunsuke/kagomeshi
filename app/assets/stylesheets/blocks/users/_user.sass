@@ -1,0 +1,24 @@
+.user
+  display: flex
+  +media-breakpoint-down(sm)
+    display: block
+
+.user__main
+  flex: 0 0 15rem
+  +media-breakpoint-up(md)
+    margin-right: 1.5rem
+  +media-breakpoint-down(sm)
+    margin-bottom: 1.25rem
+
+
+.user__image
+  +size(6rem)
+  display: block
+  +margin(horizontal, auto)
+  margin-bottom: .75rem
+
+.user__sub
+  flex: 100
+
+.user__email
+  +text-block(.8125rem 1.4 .125rem, block)

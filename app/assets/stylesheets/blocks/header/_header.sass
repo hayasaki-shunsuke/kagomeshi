@@ -1,0 +1,25 @@
+.header
+  background-color: $base
+  border-bottom: solid 1px $border-shade
+  .container
+    padding-right: 0
+
+.header__inner
+  height: 3.5rem
+  +position(relative)
+  +media-breakpoint-down(sm)
+    height: 3rem
+
+.header__logo
+  height: 100%
+  +position(absolute, left 0, top 0)
+
+.header__logo-link
+  display: flex
+  height: 100%
+  align-items: center
+
+.header__logo-image
+  +size(auto 1.625rem)
+  +media-breakpoint-down(sm)
+    height: 1.25rem

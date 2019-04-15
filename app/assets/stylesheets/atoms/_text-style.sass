@@ -1,0 +1,21 @@
+.a-long-text-style
+  font-size: 1rem
+  &.is-sm
+    font-size: .875rem
+  +media-breakpoint-down(sm)
+    font-size: .875rem
+  +long-text-style
+
+.a-short-text-style
+  font-size: .875rem
+  +media-breakpoint-down(sm)
+    font-size: .8125rem
+  &.is-lg
+    font-size: 1rem
+    +media-breakpoint-down(sm)
+      font-size: .875rem
+  &.is-sm
+    font-size: .8125rem
+    +media-breakpoint-down(sm)
+      font-size: .75rem
+  +short-text-style

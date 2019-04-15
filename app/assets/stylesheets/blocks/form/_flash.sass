@@ -1,0 +1,39 @@
+.flash
+  +padding(vertical, 1rem)
+  border: solid 1px
+  &.is-sm
+    +padding(vertical, .5rem)
+  &.is-notice
+    background-color: rgba($success, .3)
+    border-color: $success
+    color: shade($success, 50%)
+  &.is-alert
+    background-color: rgba($danger, .3)
+    border-color: $danger
+    color: shade($danger, 50%)
+  input:checked + &,
+  &.is-shown
+    display: block
+  &.is-sticky
+    +position(sticky, top 0, 10)
+
+.flash__inner
+  display: flex
+  align-items: flex-start
+
+.flash__body
+  flex: 100
+  text-align: center
+
+.flash__close
+  +size(2.75rem)
+  +text-block(1.5rem 1, flex)
+  opacity: .6
+  align-items: center
+  justify-content: center
+  margin-right: calc(#{$grid-gutter-width} / -2)
+  +margin(vertical, -.625rem -1rem)
+  cursor: pointer
+  transition: all .2s ease-out
+  &:hover
+    opacity: 1

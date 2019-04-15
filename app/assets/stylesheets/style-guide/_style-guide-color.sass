@@ -1,0 +1,42 @@
+.style-guide-color
+  margin-bottom: 2rem
+
+.style-guide-color__sample
+  +size(100% 6rem)
+  margin-bottom: .5rem
+
+.style-guide-color__hex
+  +text-block(.875rem 1.45 .25rem, 600)
+
+.style-guide-color__luma
+  +text-block(.875rem 1.45 .25rem, 600)
+
+.style-guide-color__name
+  +text-block(.875rem 1.45 .25rem, 600)
+
+// ui-colors
+$ui-colors: primary secondary warning danger info
+$color-set: ""
+$colors: main tint tint-more shade text
+@each $ui-color in $ui-colors
+  @each $color in $colors
+    @if $ui-color == primary
+      $color-set: $primary-colors
+    @else if $ui-color == secondary
+      $color-set: $secondary-colors
+    @else if $ui-color == warning
+      $color-set: $warning-colors
+    @else if $ui-color == danger
+      $color-set: $danger-colors
+    @else if $ui-color == info
+      $color-set: $info-colors
+    .style-guide-color.is-#{$ui-color}-color-#{$color}
+      .style-guide-color__sample
+        background-color: map-get($color-set, $color)
+        padding: 1rem
+      .style-guide-color__text
+        color: map-get($color-set, text)
+      .style-guide-color__hex::after
+        content: ": #{map-get($color-set, $color)}"
+      .style-guide-color__luma::after
+        content: ": #{luma(map-get($color-set, $color))}"

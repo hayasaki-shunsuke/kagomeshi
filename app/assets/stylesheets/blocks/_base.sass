@@ -1,0 +1,50 @@
+@font-face
+  font-family: 'MyYuGothicM'
+  font-weight: normal
+  src: local("YuGothic-Medium"), local("Yu Gothic Medium"), local("YuGothic-Regular")
+@font-face
+  font-family: 'MyYuGothicM'
+  font-weight: bold
+  src: local("YuGothic-Bold"), local("Yu Gothic")
+
+body
+  font-family: MyYuGothicM, YuGothic, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, メイリオ, Osaka, "MS PGothic", arial, helvetica, sans-serif
+  color: $default-text
+  background-color: $background
+
+.container
+  &.is-max
+    max-width: 100%
+  &.is-md
+    max-width: 48rem
+  &.is-sm
+    max-width: 32rem
+  .page-body &
+    +margin(horizontal, auto)
+  .page-body .container + &
+    margin-top: 1.25rem
+
+body
+  .row > [class*=col-]
+    +media-breakpoint-down(sm)
+      +padding(horizontal, 0)
+  .row
+    +media-breakpoint-down(sm)
+      +margin(horizontal, 0)
+
+[class*=col-] + [class*=col-]
+  +media-breakpoint-down(sm)
+    margin-top: 2rem
+
+body
+  .is-hidden-sm-down
+    +media-breakpoint-down(sm)
+      display: none
+
+.wrapper
+  +media-breakpoint-up(md)
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+    .wrapper__main
+      flex: 100

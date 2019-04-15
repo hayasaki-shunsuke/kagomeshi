@@ -1,0 +1,94 @@
+.a-title
+  +position(relative)
+  &.is-xl
+    +text-block(2rem 1.5, 800 $main)
+  &.is-lg
+    +text-block(1.5rem 1.5, 800)
+    +padding(vertical, .0625em)
+    padding-left: .85em
+    +media-breakpoint-down(sm)
+      font-size: 1.25rem
+    &:not(:last-child)
+      margin-bottom: .875em
+    &::before
+      content: ""
+      display: block
+      +size(.325em 100%)
+      +position(absolute, left 0, top 0, bottom 0)
+      background-color: $accent
+      border-radius: .1875rem
+  &.is-cards
+    +text-block(1.375rem 1.5, 800)
+    padding-left: .95em
+    +media-breakpoint-down(sm)
+      font-size: 1.25rem
+    &:not(:last-child)
+      margin-bottom: .5em
+    &::before
+      content: ""
+      display: block
+      +size(0)
+      +position(absolute, left 0, top 50%)
+      border-style: solid
+      border-color: transparent
+      border-width: .3125em .5em
+      border-left-color: $accent
+      transform: translate(0, -50%)
+  &.is-md
+    +text-block(1.125rem 1.5, 800)
+    padding-bottom: 2px
+    border-bottom: solid 2px $border
+    .a-number + &
+      margin-left: .375em
+  &.is-sm
+    +text-block(1rem 1.5, 800)
+    padding-left: 1.375em
+    &::before
+      content: ""
+      display: block
+      +size(1em)
+      background-color: $accent
+      border-radius: 50%
+      +position(absolute, left 0, top .125em)
+    &::after
+      content: ""
+      display: block
+      border-width: .25em .3125em
+      border-style: solid
+      border-color: transparent
+      border-left-color: $reversal-text
+      +position(absolute, left .34375em, top .375em)
+  &.is-xs
+    +text-block(.875rem 1.5, 800 $main)
+    padding-left: .75rem
+    &::before
+      content: ""
+      display: block
+      border-width: 5px 7px
+      border-style: solid
+      border-color: transparent
+      border-left-color: $accent
+      +position(absolute, left 0, top 4px)
+  &.is-no-margin
+    &:not(:last-child)
+      margin-bottom: 0
+
+.a-title-description
+  +margin(vertical, 1rem)
+  p
+    +text-block(.875rem 1.5)
+
+.a-form-title
+  +text-block(1.125rem 1.5, 800 $main)
+  padding: .125em 1.125em
+  +position(relative)
+  &::before
+    content: ""
+    +position(absolute, left 0, top 0, bottom 0)
+    display: blcok
+    background-color: $accent
+    +size(.375rem 100%)
+    border-radius: .125rem
+
+.a-form-number-title
+  +text-block(1rem 1.5, 800)

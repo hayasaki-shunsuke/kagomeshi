@@ -1,0 +1,149 @@
+.card
+  background-color: $base
+  border: solid 2px $border
+  .card + &
+    margin-top: 1.5rem
+    +media-breakpoint-down(sm)
+      margin-top: 1rem
+
+.card__header
+  padding: .75rem 1.25rem
+  +position(relative, left 0, top 0)
+  +media-breakpoint-down(sm)
+    padding: .75rem .875rem
+  &.is-sm
+    +padding(vertical, .5rem)
+    +padding(horizontal, 1rem)
+    +media-breakpoint-down(sm)
+      +padding(horizontal, .75rem)
+
+.card__header-flex
+  display: flex
+  justify-content: space-between
+  align-items: center
+  +media-breakpoint-down(sm)
+    display: block
+    >*:last-child
+      margin-top: .125rem
+
+.card__title
+  +text-block(1.25rem 1.4, $main 800)
+  +media-breakpoint-down(sm)
+    font-size: 1.125rem
+  &.is-lg
+    font-size: 1.5rem
+    +media-breakpoint-down(sm)
+      font-size: 1.25rem
+  &.is-md
+    font-size: 1rem
+    +media-breakpoint-down(sm)
+      font-size: .875rem
+  &.is-sm
+    font-size: .875rem
+    color: $default-text
+
+.card__header-description
+  +text-block(.8125rem 1.4 .25em, $muted-text)
+
+.card__date
+  +text-block(.75rem 1.4, $muted-text)
+  align-self: center
+
+.card__header-toggle-button
+  width: 2.75rem
+  +text-block(1rem 1, flex $main)
+  align-items: center
+  justify-content: center
+  +position(absolute, right 0, top 0, bottom 0)
+  cursor: pointer
+  opacity: .6
+  transition: all .2s ease-out
+  &:hover
+    opacity: 1
+
+.card__body
+  padding: .9375rem 1.25rem
+  +media-breakpoint-down(sm)
+    padding: .75rem .875rem
+  input:checked + &
+    display: none
+  &:not(:first-child)
+    border-top: solid 1px $border
+    .card.is-table-form &
+      border-top: none
+  .card.is-table-form &
+    padding: 0
+    form
+      padding: 0
+  &.is-no-padding
+    padding: 0
+  .card__header.is-sm + &
+    +padding(horizontal, 1rem)
+    +media-breakpoint-down(sm)
+      +padding(horizontal, .75rem)
+
+.card__body-inner
+  &.is-step-content
+    max-width: 42.5rem
+    +padding(vertical, 1rem)
+    +margin(horizontal, auto)
+
+.card__grade-container
+  float: right
+  margin-left: .75rem
+  margin-bottom: .75rem
+
+.card__footer
+  padding: .5rem 1.25rem
+  border-top: solid 1px $border
+  +media-breakpoint-down(sm)
+    padding: .5rem .875rem
+  .card__list + &
+    border-top-color: $border-shade
+  .card__header.is-sm + .card__body + &
+    +padding(horizontal, 1rem)
+    +media-breakpoint-down(sm)
+      +padding(horizontal, .75rem)
+
+.card__actions-items
+  display: flex
+  justify-content: center
+  +margin(horizontal, -.3125rem)
+  +media-breakpoint-down(sm)
+    +margin(horizontal, 0)
+    display: block
+
+.card__actions-item
+  +padding(horizontal, .3125rem)
+  flex: 0 0 33.33%
+  &.is-half
+    flex: 0 0 50%
+  +media-breakpoint-down(sm)
+    +padding(horizontal, 0)
+    &:not(:first-child)
+      margin-top: .625rem
+
+.card__list
+  &:not(:first-child)
+    border-top: solid 1px $border
+
+.card__list-item
+  &:not(:first-child)
+    border-top: solid 1px $border-shade
+
+.card__list-item-link
+  +text-block(.875rem 1.5, block $muted-text)
+  padding: .5rem 1rem
+  &.is-active
+    color: $default-text
+    background-color: tint($accent, 80%)
+
+.card__list-item-flex-inner
+  display: flex
+  align-items: center
+
+.card__list-item-flex-main
+  flex: 100
+
+.card__list-item-flex-sub
+  padding-right: .75rem

@@ -1,0 +1,70 @@
+.form
+  &.is-inline
+    display: flex
+    align-items: center
+  &:last-child
+    padding-bottom: .25rem
+
+.form__items
+  &.is-inline
+    display: flex
+    margin-bottom: -1.5rem
+    +margin(horizontal, -.5rem)
+    flex-wrap: wrap
+    align-items: center
+    +media-breakpoint-down(sm)
+      display: block
+      margin-bottom: 0
+  .form.is-inline &
+    flex: 100
+    margin-bottom: 0
+    padding-right: .75rem
+
+.form__item
+  &:not(:first-child)
+    margin-top: 1.25rem
+    .form__items.is-inline &
+      margin-top: 0
+  .form__items.is-inline &
+    margin-bottom: 1.25rem
+    +margin(horizontal, .5rem)
+    .form.is-inline &
+      margin-bottom: 0
+      width: 100%
+    +media-breakpoint-down(sm)
+      +margin(horizontal, 0)
+      &:last-child
+        margin-bottom: 0
+  &.is-inline
+    display: flex
+    align-items: center
+
+.form__actions
+  margin-top: 1.25rem
+  .form__items.is-inline + &
+    margin-top: 1.75rem
+  .form.is-inline &
+    margin-top: 0
+  .form.is-inline &
+    align-self: flex-end
+
+.form__actions-items
+  display: flex
+  justify-content: center
+  +margin(horizontal, -.3125rem)
+  +media-breakpoint-down(sm)
+    display: block
+    +margin(horizontal, 0)
+
+.form__actions-item
+  +padding(horizontal, .3125rem)
+  flex: 0 0 33.33%
+  .container.is-sm &,
+  .a-modal &
+    flex: 0 0 50%
+  .col-md-3 &
+    flex: 0 0 100%
+  +media-breakpoint-down(sm)
+    +padding(horizontal, 0)
+    &:not(:first-child)
+      margin-top: .5rem

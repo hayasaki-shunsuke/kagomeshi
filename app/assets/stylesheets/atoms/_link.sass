@@ -1,0 +1,15 @@
+.a-text-link
+  +hover-link-reversal
+  color: $link-text
+  cursor: pointer
+  transition: all .2s ease-out
+  &:hover
+    color: shade($link-text, 20%)
+  &.is-xs
+    +text-block(.75rem 1.4)
+  &.is-sm
+    +text-block(.8125rem 1.4)
+  &.is-md
+    +text-block(1em 1.4)
+  &.is-lg
+    +text-block(1.125rem 1.4)

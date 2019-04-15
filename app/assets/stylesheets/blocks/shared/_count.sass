@@ -1,0 +1,40 @@
+.count
+  display: flex
+  height: 1.375rem
+  +media-breakpoint-down(sm)
+    height: 1.25rem
+  &.is-stack
+    height: auto
+    display: block
+    border: solid 1px #b1b5b7
+
+.count__label
+  border: solid 1px #b1b5b7
+  +padding(horizontal, .3125rem)
+  background-color: $more-shade
+  +text-block(.625rem 1, $semi-muted-text flex 800 center)
+  align-items: center
+  justify-content: center
+  +border-radius(left, .1875rem)
+  padding-top: 2px
+  .count.is-good &
+    padding-right: .125rem
+  .count.is-stack &
+    border: none
+    border-bottom: solid 1px #b1b5b7
+    +padding(vertical, .1875rem)
+
+.count__number
+  +padding(horizontal, .375rem)
+  +border-radius(right, .1875rem)
+  background-color: $base
+  border: solid 1px #b1b5b7
+  border-left: none
+  +text-block(.8125rem 1, flex 800 center)
+  align-items: center
+  justify-content: center
+  padding-top: 3px
+  min-width: 2.5rem
+  .count.is-stack &
+    border: none
+    +padding(vertical, .1875rem)

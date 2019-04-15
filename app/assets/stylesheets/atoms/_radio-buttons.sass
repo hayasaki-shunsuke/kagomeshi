@@ -1,0 +1,27 @@
+.a-radio-buttons,
+.a-checkboxes
+  ul,
+  ol
+    list-style: none
+  li
+    display: inline-block
+    overflow: hidden
+    +position(relative)
+  input
+    +size(0)
+    overflow: hidden
+    +position(absolute, left -1px, top 0)
+    opacity: 0
+  li >label
+    +text-block(1rem 1.45, flex)
+    cursor: pointer
+    &:hover
+      text-decoration: underline
+    input:checked + label
+      color: red
+
+.a-hidden-checkbox
+  +size(0)
+  overflow: hidden
+  +position(absolute, left 0, top 0)
+  opacity: 0

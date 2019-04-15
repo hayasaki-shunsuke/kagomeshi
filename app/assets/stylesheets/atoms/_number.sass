@@ -1,0 +1,43 @@
+.a-number
+  $size: 1.5rem
+  flex: 0 0 $size
+  +size($size)
+  background-color: $accent
+  +text-block(calc(#{$size} / 1.8) 1, inline-flex 700 $main)
+  border-radius: 50%
+  justify-content: center
+  align-items: center
+  font-family: 'Quicksand', sans-serif
+  &:not(:last-child)
+    margin-right: .25em
+  &:not(:first-child)
+    margin-left: .25em
+  &.is-block
+    display: flex
+    +margin(horizontal, 0)
+  &.is-mono-color
+    background-color: $border
+    color: $default-text
+  &.is-sm
+    $size: 1.25rem
+    flex: 0 0 $size
+    +size($size)
+    font-size: calc(#{$size} / 1.8)
+
+.a-form-title-number
+  $size: 1.5rem
+  flex: 0 0 $size
+  +size($size)
+  background-color: $main
+  +text-block(.875rem 1, inline-flex 700 $reversal-text)
+  border-radius: 50%
+  justify-content: center
+  align-items: center
+  font-family: 'Quicksand', sans-serif
+  &:not(:last-child)
+    margin-right: .25em
+  &:not(:first-child)
+    margin-left: .25em
+  &.is-block
+    display: flex
+    +margin(horizontal, 0)

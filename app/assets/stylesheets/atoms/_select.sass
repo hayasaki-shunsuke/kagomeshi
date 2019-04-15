@@ -1,0 +1,32 @@
+.a-select
+  +position(relative)
+  cursor: pointer
+  +text-block(1rem 1)
+  *
+    cursor: pointer
+    transition: all .2s ease-out
+  &:hover select
+    background-color: $base
+    border-color: tint($primary, 40%)
+    box-shadow: 0 0 0 .1875rem rgba($primary, .25)
+  &::before
+    +fa(fas "\f107")
+    +position(absolute, right .9375rem, top 0, 1)
+    +text-block(1rem 41px, $muted-text)
+    pointer-events: none
+  select
+    +size(100% 38px)
+    padding: 8px 36px 8px 12px
+    border: 1px solid $border-shade
+    color: default-text
+    border-radius: .1875rem
+    text-overflow: ""
+    option
+      background-color: $base
+      color: $default-text
+  select::-ms-expand
+    display: none
+  &.is-sm
+    font-size: .8125rem
+    select
+      height: 2rem

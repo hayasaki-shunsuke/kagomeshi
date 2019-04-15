@@ -1,0 +1,22 @@
+.page__header
+  background-color: $base
+  border-bottom: solid 1px $border-shade
+
+.page__header-inner
+  +media-breakpoint-up(md)
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 3rem
+  +media-breakpoint-down(sm)
+    display: block
+    +padding(vertical, .75rem)
+
+.page__header-title
+  +text-block(1.25rem 1, 800 $main)
+  body.is-admin &
+    color: $admin-main
+
+.page__body
+  +position(relative)
+  +padding(vertical, 1.5rem)

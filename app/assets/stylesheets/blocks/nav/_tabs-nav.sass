@@ -1,0 +1,51 @@
+.tabs-nav
+  padding-top: .75rem
+  background-color: $more-shade
+  border-bottom: solid 2px $border-shade
+  &.is-sm
+    padding-top: 0
+    background-color: transparent
+    border-bottom: none
+    margin-bottom: -2px
+
+.tabs-nav__items
+  display: flex
+  margin-bottom: -2px
+  +margin(horizontal, -.125rem)
+  .tabs-nav.is-sm &
+    +margin(horizontal, 0)
+    margin-bottom: 0
+
+.tabs-nav__item
+  +padding(horizontal, .125rem)
+  .tabs-nav.is-sm &
+    +padding(horizontal, 0)
+
+.tabs-nav__item-link
+  +text-block(.875rem 1.4, block $muted-text)
+  border: solid 1px $border-shade
+  border-bottom-width: 2px
+  padding: calc(.625rem + 2px) .75rem .625rem
+  background-color: $shade
+  transition: all .2s ease-out
+  +border-radius(top, .125rem)
+  cursor: pointer
+  +all-link-state
+    text-decoration: none
+  .tabs-nav.is-sm &
+    border: solid 2px $border-shade
+    +border-radius(top, 0)
+    +padding(vertical, .75rem)
+    +padding(horizontal, .875rem)
+    +text-block(.8125rem 1, 800)
+  &:hover
+    color: $default-text
+    background-color: $base
+  .tabs-nav__item.is-active &
+    background-color: $main
+    border-color: $main
+    border-radius: .125rem
+    +all-link-state
+      color: $reversal-text
+    .tabs-nav.is-sm &
+      border-radius: 0
