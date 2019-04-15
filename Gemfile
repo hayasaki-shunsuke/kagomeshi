@@ -41,6 +41,7 @@ gem 'slim-rails'
 gem 'sassc-rails'
 gem 'rack-user_agent'
 gem 'high_voltage'
+gem 'font-awesome-sass'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
