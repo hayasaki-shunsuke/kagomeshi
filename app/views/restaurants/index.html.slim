@@ -1,0 +1,27 @@
+h1 Listing restaurants
+
+table
+  thead
+    tr
+      th Restaurant name
+      th Address
+      th Business hours
+      th Memo
+      th
+      th
+      th
+
+  tbody
+    - @restaurants.each do |restaurant|
+      tr
+        td = restaurant.restaurant_name
+        td = restaurant.address
+        td = restaurant.business_hours
+        td = restaurant.memo
+        td = link_to 'Show', restaurant
+        td = link_to 'Edit', edit_restaurant_path(restaurant)
+        td = link_to 'Destroy', restaurant, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Restaurant', new_restaurant_path
