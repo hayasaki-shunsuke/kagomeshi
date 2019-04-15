@@ -9,11 +9,9 @@ html
         = render "header"
         .page
           .page__body
-              - if notice
-                p.alert.alert-success
-                  = notice
-              - if alert
-                p.alert.alert-danger
-                  = alert
+            - if notice
+              p.alert.alert-success= notice
+            - if alert
+              p.alert.alert-danger= alert
             = yield
       = render "footer"
