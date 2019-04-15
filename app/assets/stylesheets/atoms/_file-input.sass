@@ -1,0 +1,34 @@
+.a-file-input
+  +text-block(.875rem 1, inline-flex)
+  align-items: center
+  background-color: $shade
+  border: solid 1px $border-shade
+  padding: .125rem 1rem 0
+  +size(auto 2.125rem)
+  transition: all .2s ease-out
+  border-radius: .1875rem
+  +position(relative)
+  input
+    outline: none
+    +size(0)
+    overflow: hidden
+    +position(absolute, left 0, top 0)
+    opacity: 0
+  &.is-disabled
+    color: $muted-text
+    background-color: $more-shade
+    border: dashed 1px $border-more-shade
+    cursor: not-allowed
+  .a-form-title + &,
+  .a-form-number-title + &
+    margin-top: 1rem
+
+.a-form-label + *
+  margin-top: .3125rem
+  .form.is-inline &
+    margin-top: 0
+
+.a-form-label.is-sm + *
+  margin-top: .125rem
+  .form.is-inline &
+    margin-top: 0

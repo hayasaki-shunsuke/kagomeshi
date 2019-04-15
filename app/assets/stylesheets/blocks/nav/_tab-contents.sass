@@ -1,0 +1,51 @@
+.tab-contents
+  +position(relative)
+
+.tabs-nav__item
+  &:not(:first-child)
+    margin-left: -2px
+
+=tabs-nav__item-link-active
+  background-color: $base
+  color: $default-text
+  pointer-events: none
+  &::before
+    content: ""
+    display: block
+    +position(absolute, left 0, bottom -2px, right 0)
+    background-color: $base
+    height: 2px
+
+=tabs-nav__item-link-default
+  background-color: $shade
+  color: $muted-text
+  pointer-events: auto
+  &::before
+    content: none
+  &:hover
+    background-color: $more-shade
+
+.tabs-nav__item-link
+  +position(relative)
+  border-bottom: none
+  .tabs-nav__item:nth-child(1) &
+    +tabs-nav__item-link-active
+  .tabs-nav__item:nth-child(2) &
+    +tabs-nav__item-link-default
+  input:checked + * .tabs-nav__item:nth-child(1) &
+    +tabs-nav__item-link-default
+  input:checked + * .tabs-nav__item:nth-child(2) &
+    +tabs-nav__item-link-active
+
+.tab-contents__item
+  display: none
+  .card__header
+    display: none
+  .card__list
+    border-top: none
+  &:first-child
+    display: block
+  input:checked + * + * &:nth-child(1)
+    display: none
+  input:checked + * + * &:nth-child(2)
+    display: block

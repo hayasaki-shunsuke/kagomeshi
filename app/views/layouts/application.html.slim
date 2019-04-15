@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title Kagomeshi
+    = render "head"
+  body
+    .wrapper
+      .wrapper__main
+        = render "header"
+        .page
+          .page__body
+            = yield
+      = render "footer"

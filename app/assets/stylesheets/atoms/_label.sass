@@ -1,0 +1,13 @@
+.a-form-label
+  +text-block(1rem 1.4, 800 nowrap)
+  +position(relative)
+  &.is-required
+    &::after
+      +fa(fas "\f069")
+      +text-block(.625rem 1, $danger)
+      transform: scale(.8)
+      +position(absolute, right -1em, top -.15em)
+  &.is-sm
+    font-size: .875rem
+  .form__item.is-inline &
+    margin-right: 1em

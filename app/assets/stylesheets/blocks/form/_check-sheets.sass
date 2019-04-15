@@ -1,0 +1,35 @@
+.check-sheets__check-sheet
+  padding: 1rem 1.25rem
+  +media-breakpoint-down(sm)
+    padding: .75rem .875rem
+  &:not(:first-child)
+    margin-top: 1rem
+    border-top: solid 1px $border
+
+.check-sheets__items
+  margin-top: 1rem
+
+.check-sheets__item
+  &:not(:first-child)
+    margin-top: 1.5rem
+  &:not(:last-child)
+    border-bottom: dashed 1px $border
+    padding-bottom: 1.5rem
+
+.check-sheets__item-question
+  +text-block(1rem 1.5)
+
+.check-sheets__item-inputs
+  margin-top: .75rem
+
+.check-sheets__item-inputs-items
+  display: flex
+  justify-content: center
+  +margin(horizontal, -.75rem)
+  flex-wrap: wrap
+  margin-bottom: -.75rem
+
+.check-sheets__item-inputs-item
+  +padding(horizontal, .75rem)
+  +text-block(.875rem 1.5, nowrap)
+  margin-bottom: .75rem

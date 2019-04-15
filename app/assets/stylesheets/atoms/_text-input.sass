@@ -1,0 +1,38 @@
+.a-text-input
+  +text-block(1rem 1.4)
+  background-color: $shade
+  border: solid 1px $border-shade
+  padding: .3125rem .5rem
+  width: 100%
+  transition: all .2s ease-out
+  border-radius: .1875rem
+  &:focus
+    background-color: $base
+    border-color: tint($primary, 40%)
+    box-shadow: 0 0 0 .1875rem rgba($primary, .25)
+  &:disabled
+    background-color: $more-shade
+    border: dashed 1px $border-more-shade
+    cursor: not-allowed
+  .a-form-title + &,
+  .a-form-number-title + &
+    margin-top: 1rem
+
+.a-form-label + *
+  margin-top: .3125rem
+  .form.is-inline &
+    margin-top: 0
+
+.a-form-label.is-sm + *
+  margin-top: .25rem
+  .form.is-inline &
+    margin-top: 0
+
+
+textarea.a-text-input
+  line-height: 1.6
+  vertical-align: bottom
+  &.is-md
+    min-height: 20rem
+  .a-table &
+    height: 10rem

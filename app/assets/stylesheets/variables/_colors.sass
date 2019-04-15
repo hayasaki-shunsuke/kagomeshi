@@ -1,0 +1,58 @@
+$base: #ffffff
+$accent: #fad23a
+$shade: #f4f7f9
+$more-shade: #e7eaec
+$border: #e1e5e6
+$border-shade: #d6dcde
+$border-more-shade: #a9b2b5
+$background: #fcfcfc
+$base-reversal: #54585d
+$baae-reversal-shade: #37393c
+
+// main
+$main: #035db9
+$main-shade: #1b5487
+$main-border: #2b7dd1
+$main-tint: #0999dc
+$main-more-tint: #93c5f7
+$main-more-more-tint: #e8f4ff
+
+$admin-main: #bb443f
+
+$default-text: #222
+$reversal-text: #ffffff
+$muted-text: #748d99
+$more-muted-text: #a4aaad
+$semi-muted-text: #636363
+$warning-text: #695913
+$muted-text-reversal: #e4e7ea
+
+$link-text: #3273dc
+
+$success: #19b1ab
+$disabled: #c7c6c6
+
+
+//////////////////////
+// UI Colors
+//////////////////////
+
+// primary
+$primary-colors: (main: $main, tint: $main-tint, shade: $main-shade, text: $main-more-tint)
+$primary: map-get($primary-colors, main)
+
+// secondary
+$secondary-colors: (main: #f7f7f7, tint: #f6f6f6, shade: #c7c7c7, text: #636363)
+$secondary: map-get($secondary-colors, main)
+
+// warning
+$warning-colors: (main: $accent, tint: #fff6d1, shade: #d0ae12, text: #79660a)
+$warning: map-get($warning-colors, main)
+
+// danger
+$danger-colors: (main: #e84942, tint: #ffeff6, shade: #bb5c57, text: #903d39)
+$danger: map-get($danger-colors, main)
+
+// info
+$info-colors: (main: #29c3d4, tint: #eafbff, shade: #1e91a2, text: #1c7c8a)
+$info: map-get($info-colors, main)

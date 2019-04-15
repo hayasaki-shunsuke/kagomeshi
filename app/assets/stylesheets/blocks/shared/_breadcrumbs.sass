@@ -1,0 +1,21 @@
+.breadcrumbs
+  margin-top: .5rem
+
+.breadcrumbs__items
+  display: flex
+
+.breadcrumbs__item
+  &:not(:last-child)
+    &::after
+      content: '>'
+      +margin(horizontal, .5em)
+      display: inline-block
+      +text-block(.625rem 1, nowrap $muted-text)
+
+.breadcrumbs__item-link
+  +text-block(.8125rem 1, nowrap $muted-text)
+  +hover-link-reversal
+  .breadcrumbs__item:last-child &
+    pointer-events: none
+    +all-link-state
+      text-decoration: none

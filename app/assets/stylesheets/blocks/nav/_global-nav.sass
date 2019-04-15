@@ -1,0 +1,38 @@
+.global-nav
+  width: 5rem
+  +position(fixed, left 0, top 0, bottom 0)
+  background-color: $main
+  overflow-y: auto
+  body.is-admin &
+    background-color: $admin-main
+  +media-breakpoint-down(sm)
+    display: none
+
+.global-nav__items
+  display: flex
+  flex-direction: column
+
+.global-nav__item
+  display: flex
+  +size(5rem 4.5rem)
+  border-bottom: .0625rem solid tint($main, 20%)
+  body.is-admin &
+    border-bottom-color: tint($admin-main, 20%)
+
+.global-nav__item-link
+  display: flex
+  flex-direction: column
+  text-decoration: none
+  +size(100%)
+  justify-content: center
+  align-items: center
+
+.global-nav__item-link-icon
+  display: flex
+  +size(2.75rem)
+  justify-content: center
+  align-items: center
+  +text-block(1.5rem 1, center $reversal-text)
+
+.global-nav__item-link-label
+  +text-block(.75rem 1.4 -.25rem, center $reversal-text 600)

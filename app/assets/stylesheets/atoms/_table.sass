@@ -1,0 +1,90 @@
+.a-table
+  width: 100%
+  background-color: $base
+  border: solid 2px $border-shade
+  .card.is-table-form &
+    border: none
+  .form__item &
+    min-width: 40rem
+  .card.is-table-form & >*:last-child tr >*
+    border-bottom: none
+  .card + &
+    margin-top: 1.5rem
+  th,
+  td
+    border: solid 1px $border-shade
+    padding: .375rem .625rem
+    +text-block(.875rem 1.5)
+    &.is-align-center
+      text-align: center
+    &.is-actions
+      text-align: center
+      +padding(vertical, .1875rem)
+      white-space: nowrap
+      +media-breakpoint-down(sm)
+        .a-button.is-xs
+          min-height: 2.75rem
+    .card.is-table-form &:first-child
+      border-left: none
+    .card.is-table-form &:last-child
+      border-right: none
+  thead
+    background-color: $shade
+    th
+      white-space: nowrap
+  tbody
+    tr:nth-child(even)
+      background-color: #fbfbfb
+  td
+    [class*=a-button]:not(:last-child)
+      margin-right: .125rem
+  .is-w-100
+    width: 6.25rem
+  .is-w-260
+    width: 260px
+  .is-align-left
+    text-align: left
+  .is-long-th
+    h3
+      +text-block(.875rem 1.4)
+      +position(relative)
+      padding-left: 1.75rem
+      span
+        font-size: .75rem
+        font-weight: 400
+        display: block
+        margin-top: .125em
+      .a-number
+        +position(absolute, left 0, top -1px)
+    ul
+      margin-top: .75rem
+      list-style-type: disc
+      margin-left: 2em
+    li
+      +text-block(.8125rem 1.4, 400)
+      &:not(:first-child)
+        margin-top: .25em
+
+.a-border-table
+  width: 100%
+  background-color: $base
+  th,
+  td
+    padding: .375rem .625rem
+    +text-block(.875rem 1.5)
+    &.is-align-center
+      text-align: center
+    &.is-actions
+      text-align: center
+      +padding(vertical, .1875rem)
+  tbody th
+    text-align: right
+  tr:not(:last-child)
+    border-bottom: dashed 1px $border-shade
+  tr:last-child
+    th,
+    td
+      border: none
+  td
+    [class*=a-button]:not(:last-child)
+      margin-right: .125rem
