@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Restaurant name:
+  = @restaurant.restaurant_name
+p
+  strong Address:
+  = @restaurant.address
+p
+  strong Business hours:
+  = @restaurant.business_hours
+p
+  strong Memo:
+  = @restaurant.memo
+
+=> link_to 'Edit', edit_restaurant_path(@restaurant)
+'|
+=< link_to 'Back', restaurants_path
