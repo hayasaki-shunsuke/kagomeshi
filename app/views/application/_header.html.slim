@@ -11,3 +11,5 @@ header.header
               = link_to 'Edit profile', edit_user_registration_path, class: 'navbar-link'
             li.header__nav-item
               = link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link'
+            li.header__nav-item
+              = image_tag current_user.avatar.variant(resize: "50x50")
