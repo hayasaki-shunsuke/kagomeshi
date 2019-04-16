@@ -9,13 +9,12 @@ html
         - if body_class.exclude?("is-auth")
           = render "header"
         .page
-          .page__body
-            - if notice
-              .alert.alert-success
-                = notice
-            - if alert
-              .alert.alert-danger
-                = alert
-            = yield
+          - if notice
+            .alert.alert-success
+              = notice
+          - if alert
+            .alert.alert-danger
+              = alert
+          = yield
       - if body_class.exclude?("is-auth") && body_class.exclude?("is-restaurants-show")
         = render "footer"

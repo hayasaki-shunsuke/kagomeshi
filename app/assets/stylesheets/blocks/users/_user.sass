@@ -1,23 +1,28 @@
 .user__header
   background-color: $main
-  height: 6rem
-
-.user__main
-  flex: 0 0 15rem
-  +media-breakpoint-up(md)
-    margin-right: 1.5rem
+  height: 9.5rem
+  margin-bottom: 6.5rem
   +media-breakpoint-down(sm)
-    margin-bottom: 1.25rem
+    height: 6.5rem
+    margin-bottom: 5rem
 
+.user__header-inner
+  padding-top: 2rem
+  +media-breakpoint-down(sm)
+    padding-top: 1rem
+
+.user__name
+  +text-block(1.75rem 1.4 0 .5em, $reversal-text center 800)
+  +media-breakpoint-down(sm)
+    font-size: 1.5rem
 
 .user__image
-  +size(6rem)
+  +size(10rem)
   display: block
   +margin(horizontal, auto)
-  margin-bottom: .75rem
-
-.user__sub
-  flex: 100
-
-.user__email
-  +text-block(.8125rem 1.4 .125rem, block)
+  border: solid 1rem $base
+  border-radius: 50%
+  object-fit: cover
+  +media-breakpoint-down(sm)
+    +size(7rem)
+    border-width: .5rem

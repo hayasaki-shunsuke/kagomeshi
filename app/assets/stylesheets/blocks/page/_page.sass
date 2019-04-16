@@ -1,6 +1,5 @@
 .page__header
-  background-color: $base
-  border-bottom: solid 1px $border-shade
+  background-color: $main
 
 .page__header-inner
   +media-breakpoint-up(md)
@@ -12,8 +11,8 @@
     display: block
     +padding(vertical, .75rem)
 
-.page__header-title
-  +text-block(1.25rem 1, 800 $main)
+.page__title
+  +text-block(1.25rem 1, 800 $reversal-text)
   body.is-admin &
     color: $admin-main
 

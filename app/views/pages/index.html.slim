@@ -1,15 +1,21 @@
-.demo-pages
-  .container
-    h1.demo-pages__title
-      | ページのデモ
-    .demo-pages__items
-      .demo-pages__item
-        = link_to "restaurants_index", page_path("restaurants_index")
-      .demo-pages__item
-        = link_to "restaurants_show", page_path("restaurants_show")
-      .demo-pages__item
-        = link_to "users_show", page_path("users_show")
-      .demo-pages__item
-        = link_to "login", page_path("login")
-      .demo-pages__item
-        = link_to "signup", page_path("signup")
+header.page__header
+  .container.is-md
+    .page__header-inner
+      h1.page__title
+        | ページのデモ
+.page__body
+  .container.is-md
+    .demo-pages
+      .demo-pages__items
+        .demo-pages__item
+          = link_to "restaurants_index", page_path("restaurants_index")
+        .demo-pages__item
+          = link_to "restaurants_show", page_path("restaurants_show")
+        .demo-pages__item
+          = link_to "users_show", page_path("users_show")
+        .demo-pages__item
+          = link_to "login", page_path("login")
+        .demo-pages__item
+          = link_to "signup", page_path("signup")
+        .demo-pages__item
+          = link_to "comment_new", page_path("comment_new")

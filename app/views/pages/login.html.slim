@@ -1,30 +1,31 @@
 - content_for(:extra_body_classes, "is-auth")
 
-.auth
-  .container.is-xs
-    = image_tag("logo.svg", class: "auth__logo-image", alt: "かごメシ")
-    h1.auth__title
-      | ログイン
-    .card
-      .card__body
-        form.form
-          .form__items
-            .form__item
-              label.a-form-label
-                | メールアドレス
-              input.a-text-input(type="text")
-            .form__item
-              label.a-form-label
-                | パスワード
-              input.a-text-input(type="password")
-              .form__item-help.is-align-right
-                = link_to "", class: "form__forgot-password" do
-                  | パスワードを忘れた
-            .form__item.is-inline
-              label.a-checkbox
-                input.a-text-input(type="checkbox")
-                span
-                  | 次回から自動的にログイン
-          .form__actions
-            .form__action
-              input.a-button.is-md.is-primary.is-block(type="submit" value="ログイン")
+.page__body
+  .auth
+    .container.is-xs
+      = image_tag("logo.svg", class: "auth__logo-image", alt: "かごメシ")
+      h1.auth__title
+        | ログイン
+      .card
+        .card__body
+          form.form
+            .form__items
+              .form__item
+                label.a-form-label
+                  | メールアドレス
+                input.a-text-input(type="text")
+              .form__item
+                label.a-form-label
+                  | パスワード
+                input.a-text-input(type="password")
+                .form__item-help.is-align-right
+                  = link_to "", class: "form__forgot-password" do
+                    | パスワードを忘れた
+              .form__item.is-inline
+                label.a-checkbox
+                  input.a-text-input(type="checkbox")
+                  span
+                    | 次回から自動的にログイン
+            .form__actions
+              .form__action
+                input.a-button.is-md.is-primary.is-block(type="submit" value="ログイン")
