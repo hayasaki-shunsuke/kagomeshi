@@ -22,7 +22,7 @@
 
 .form__item
   &:not(:first-child)
-    margin-top: 1.25rem
+    margin-top: 1rem
     .form__items.is-inline &
       margin-top: 0
   .form__items.is-inline &
@@ -38,6 +38,16 @@
   &.is-inline
     display: flex
     align-items: center
+
+.form__item-help
+  margin-top: .375rem
+  +text-block(.8125rem 1.4)
+  &:last-child
+    margin-bottom: -.25rem
+  &.is-align-right
+    text-align: right
+  a
+    +hover-link-reversal
 
 .form__actions
   margin-top: 1.25rem

@@ -1,4 +1,15 @@
-h1
-  | ページのデモ
-
-= link_to "restaurants_index", page_path("restaurants_index")
+.demo-pages
+  .container
+    h1.demo-pages__title
+      | ページのデモ
+    .demo-pages__items
+      .demo-pages__item
+        = link_to "restaurants_index", page_path("restaurants_index")
+      .demo-pages__item
+        = link_to "restaurants_show", page_path("restaurants_show")
+      .demo-pages__item
+        = link_to "users_show", page_path("users_show")
+      .demo-pages__item
+        = link_to "login", page_path("login")
+      .demo-pages__item
+        = link_to "signup", page_path("signup")

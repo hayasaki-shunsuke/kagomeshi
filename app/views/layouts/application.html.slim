@@ -3,24 +3,19 @@ html
   head
     title Kagomeshi
     = render "head"
-  body
+  body(class= "#{namespace} #{body_class}")
     .wrapper
       .wrapper__main
-        = render "header"
+        - if body_class.exclude?("is-auth")
+          = render "header"
         .page
           .page__body
             - if notice
-              p.alert.alert-success= notice
+              .alert.alert-success
+                = notice
             - if alert
-              p.alert.alert-danger= alert
-          p.navbar-text.pull-right
-            - if user_signed_in?
-              |  Logged in as 
-              strong
-                = current_user.email
-              | . 
-              = link_to 'Edit profile', edit_user_registration_path, class: 'navbar-link'
-              |  | 
-              = link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link'
+              .alert.alert-danger
+                = alert
             = yield
-      = render "footer"
+      - if body_class.exclude?("is-auth") && body_class.exclude?("is-restaurants-show")
+        = render "footer"

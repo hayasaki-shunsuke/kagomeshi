@@ -20,3 +20,10 @@
 .page__body
   +position(relative)
   +padding(vertical, 1.5rem)
+  body.is-auth &
+    padding-top: 6rem
+  body.is-restaurants-show &
+    +padding(vertical, 0 4.5rem)
+  body.is-users-show &,
+  body.is-restaurants-index &
+    padding-top: 0

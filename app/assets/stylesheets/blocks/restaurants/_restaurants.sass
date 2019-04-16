@@ -1,2 +1,60 @@
+.restaurants
+  margin-bottom: -1.5rem
+
+.restaurants__title
+  +text-block(2.5rem 1.4, 800 center)
+
+.restaurants__items
+  margin-top: 1.5rem
+
 .restaurants__item
-  background-color: $base
+  padding-bottom: 1.5rem
+  .card
+    border-radius: .375rem
+    overflow: hidden
+  .card__body
+    padding: .875rem .875rem .75rem
+  .card__footer
+    +padding(horizontal, .875rem)
+
+.restaurants__item-link
+  text-decoration: none
+
+.restaurants__item-image
+  +size(100% 13rem)
+  object-fit: cover
+  transition: all .2s ease-out
+  background-color: yellow
+  .restaurants__item-link:hover &
+    opacity: .85
+  & + .card__body
+    border-top: none
+
+.restaurants__item-name
+  +text-block(1.125rem 1.4, 800 $default-text)
+  transition: all .2s ease-out
+  .restaurants__item-link:hover &
+    text-decoration: underline
+    color: $primary
+
+.restaurants__item-description
+  margin-top: .25rem
+  p
+    +text-block(.875rem 1.6, $default-text)
+
+.restaurants__item-counts-items
+  display: flex
+  justify-content: flex-end
+  +margin(horizontal, -.5rem)
+
+.restaurants__item-counts-item
+  +padding(horizontal, .5rem)
+  display: flex
+  align-items: center
+
+.restaurants__item-counts-item-label
+  margin-right: .25rem
+  +text-block(1rem 1, $muted-text)
+
+.restaurants__item-counts-item-number
+  +text-block(1rem 1, 800 $default-text)

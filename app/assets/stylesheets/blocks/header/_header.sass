@@ -1,8 +1,10 @@
 .header
   background-color: $base
   border-bottom: solid 1px $border-shade
-  .container
-    padding-right: 0
+  body.is-restaurants-show &,
+  body.is-users-show &,
+  body.is-restaurants-index &
+    border-bottom: none
 
 .header__inner
   height: 3.5rem
@@ -20,6 +22,12 @@
   align-items: center
 
 .header__logo-image
-  +size(auto 1.625rem)
+  +size(9.5rem auto)
+  transition: all .2s ease-out
   +media-breakpoint-down(sm)
     height: 1.25rem
+  .header__logo-link:hover &
+    opacity: .7
+
+.header__nav
+  +position(absolute, right 0, top 0)
