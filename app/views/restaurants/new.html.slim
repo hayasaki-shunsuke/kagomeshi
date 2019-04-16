@@ -1,5 +1,9 @@
-h1 New restaurant
+.page__header
+  .container.is-md
+    .page__header-inner
+      h1.page__title
+        | New restaurant
 
-== render 'form'
-
-= link_to 'Back', restaurants_path
+.page__body
+  == render 'form'
+  = link_to 'Back', restaurants_path

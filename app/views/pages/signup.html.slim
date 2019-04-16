@@ -1,32 +1,33 @@
 - content_for(:extra_body_classes, "is-auth")
 
-.auth
-  .container.is-xs
-    = image_tag("logo.svg", class: "auth__logo-image", alt: "かごメシ")
-    h1.auth__title
-      | サインアップ
-    .card
-      .card__body
-        form.form
-          .form__items
-            .form__item
-              label.a-form-label.is-required
-                | メールアドレス
-              input.a-text-input(type="text")
-            .form__item
-              label.a-form-label.is-required
-                | ニックネーム
-              input.a-text-input(type="text")
-            .form__item
-              label.a-form-label.is-required
-                | パスワード
-              input.a-text-input(type="password")
-            .form__item
-              label.a-form-label.is-required
-                | パスワード確認
-              input.a-text-input(type="password")
-              .form__item-help
-                | 確認のためパスワードをもう一度入力。
-          .form__actions
-            .form__action
-              input.a-button.is-md.is-primary.is-block(type="submit" value="サインアップ")
+.page__body
+  .auth
+    .container.is-xs
+      = image_tag("logo.svg", class: "auth__logo-image", alt: "かごメシ")
+      h1.auth__title
+        | サインアップ
+      .card
+        .card__body
+          form.form
+            .form__items
+              .form__item
+                label.a-form-label.is-required
+                  | メールアドレス
+                input.a-text-input(type="text")
+              .form__item
+                label.a-form-label.is-required
+                  | ニックネーム
+                input.a-text-input(type="text")
+              .form__item
+                label.a-form-label.is-required
+                  | パスワード
+                input.a-text-input(type="password")
+              .form__item
+                label.a-form-label.is-required
+                  | パスワード確認
+                input.a-text-input(type="password")
+                .form__item-help
+                  | 確認のためパスワードをもう一度入力。
+            .form__actions
+              .form__action
+                input.a-button.is-md.is-primary.is-block(type="submit" value="サインアップ")

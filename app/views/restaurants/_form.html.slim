@@ -1,21 +1,26 @@
-= form_for @restaurant do |f|
-  - if @restaurant.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@restaurant.errors.count, "error")} prohibited this restaurant from being saved:"
-      ul
-        - @restaurant.errors.full_messages.each do |message|
-          li = message
+- if @restaurant.errors.any?
+  #error_explanation
+    h2 = "#{pluralize(@restaurant.errors.count, "error")} prohibited this restaurant from being saved:"
+    ul
+      - @restaurant.errors.full_messages.each do |message|
+        li = message
 
-  .field
-    = f.label :restaurant_name
-    = f.text_field :restaurant_name
-  .field
-    = f.label :address
-    = f.text_field :address
-  .field
-    = f.label :business_hours
-    = f.text_area :business_hours
-  .field
-    = f.label :memo
-    = f.text_area :memo
-  .actions = f.submit
+= form_for @restaurant, class: "form" do |f|
+  .container.is-md
+    .form__items
+      .form__item
+        = f.label :restaurant_name, class: "a-form-label"
+        = f.text_field :restaurant_name, class: "a-text-input"
+      .form__item
+        = f.label :address, class: "a-form-label"
+        = f.text_field :address, class: "a-text-input"
+      .form__item
+        = f.label :business_hours, class: "a-form-label"
+        = f.text_area :business_hours, class: "a-text-input"
+      .form__item
+        = f.label :memo, class: "a-form-label"
+        = f.text_area :memo, class: "a-text-input"
+    .form__actions
+      ul.form__actions-items
+        li.form__actions-item
+          = f.submit class: "a-button is-md is-primary is-block"

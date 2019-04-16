@@ -7,10 +7,14 @@
   &.is-mine
     .card__header
       background-color: #f2fbff
+  +media-breakpoint-down(sm)
+    display: block
 
 .comments__item-author
   flex: 0 0 4rem
   margin-right: 1.25rem
+  +media-breakpoint-down(sm)
+    display: none
 
 .comments__item-author-image
   border-radius: .25rem
@@ -24,11 +28,15 @@
   display: flex
   align-items: center
   justify-content: space-between
+  +media-breakpoint-down(sm)
+    display: block
 
 .comments__item-author-name
   +text-block(.875rem 1, 800)
   .comments__item.is-mine &
     color: $primary
+  +media-breakpoint-down(sm)
+    margin-bottom: .25rem
 
 .comments__item-created-at
   +text-block(.75rem 1, $muted-text)

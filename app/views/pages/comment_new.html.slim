@@ -1,0 +1,24 @@
+header.page__header
+  .container
+    .page__header-inner
+      h2.page__title
+        | 新規コメント
+
+.page__body
+  .container.is-sm
+    .card
+      .card__body
+        form.form
+          .form__items
+            .form__item
+              label.a-form-label
+                | 写真
+              input.a-text-input(type="file")
+            .form__item
+              label.a-form-label
+                | コメント
+              textarea.a-text-input
+          .form__actions
+            .form__actions-items
+              .form__actions-item
+                input.a-button.is-primary.is-md.is-block(type="submit" value="投稿")

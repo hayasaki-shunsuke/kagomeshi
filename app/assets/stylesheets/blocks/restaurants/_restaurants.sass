@@ -2,10 +2,18 @@
   margin-bottom: -1.5rem
 
 .restaurants__title
-  +text-block(2.5rem 1.4, 800 center)
+  +text-block(2rem 1.4, 800 center)
+  +position(relative)
+  &::after
+    content: ""
+    display: block
+    +size(7.5rem .1875rem)
+    background-color: $main
+    +position(absolute, left 50%, bottom -.375rem)
+    transform: translate(-50%, 0)
 
 .restaurants__items
-  margin-top: 1.5rem
+  margin-top: 2.5rem
 
 .restaurants__item
   padding-bottom: 1.5rem

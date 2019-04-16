@@ -2,6 +2,8 @@
   +size(100% 10rem)
   +position(relative)
   overflow: hidden
+  +media-breakpoint-down(sm)
+    height: 6rem
   &::before
     content: ""
     +position(absolute, left 0, top 0, right 0, bottom 0, 2)
