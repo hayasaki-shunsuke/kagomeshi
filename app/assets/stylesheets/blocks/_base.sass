@@ -12,6 +12,9 @@ body
   color: $default-text
   background-color: $background
 
+a
+  color: $primary
+
 .container
   &.is-max
     max-width: 100%
@@ -19,6 +22,8 @@ body
     max-width: 48rem
   &.is-sm
     max-width: 32rem
+  &.is-xs
+    max-width: 26rem
   .page-body &
     +margin(horizontal, auto)
   .page-body .container + &

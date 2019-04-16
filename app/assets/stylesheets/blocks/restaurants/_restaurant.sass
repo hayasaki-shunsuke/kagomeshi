@@ -1,0 +1,36 @@
+.restaurant__header
+  +size(100% 10rem)
+  +position(relative)
+  overflow: hidden
+  &::before
+    content: ""
+    +position(absolute, left 0, top 0, right 0, bottom 0, 2)
+    +size(100%)
+
+.restaurant__header-image
+  +size(100%)
+  object-fit: cover
+  +position(absolute, left 0, top 0, right 0, bottom 0, 1)
+  opacity: .8
+
+.restaurant__header-inner
+  +position(relative, 3)
+
+.restaurant__body
+  +position(relative, 3)
+
+.restaurant__body-inner
+  margin-top: -3rem
+
+.restaurant__description-body
+  margin-top: .5rem
+  p
+    +text-block(.875rem 1.6 0 1em)
+    &:last-child
+      margin-bottom: 0
+
+.restaurant__description-title
+  +text-block(1rem 1.4, 800)
+
+.restaurant__basic-data
+  margin-top: 1.5rem

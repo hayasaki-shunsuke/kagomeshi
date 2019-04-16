@@ -1,0 +1,76 @@
+.comments
+  margin-top: 2rem
+
+.comments__item
+  display: flex
+  margin-bottom: 1rem
+  &.is-mine
+    .card__header
+      background-color: #f2fbff
+
+.comments__item-author
+  flex: 0 0 4rem
+  margin-right: 1.25rem
+
+.comments__item-author-image
+  border-radius: .25rem
+  +size(4rem)
+  object-fit: cover
+
+.comments__item-main
+  flex: 100
+
+.comments__item-meta
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.comments__item-author-name
+  +text-block(.875rem 1, 800)
+  .comments__item.is-mine &
+    color: $primary
+
+.comments__item-created-at
+  +text-block(.75rem 1, $muted-text)
+
+.comments__item-body
+  img + p
+    margin-top: 1.25em
+  p
+    +text-block(.875rem 1.6 0 1em)
+    &:last-child
+      margin-bottom: 0
+
+.comments__item-action-container
+  margin-top: 1rem
+  display: flex
+  justify-content: flex-end
+  align-items: center
+
+.comments__item-action-count
+  border: solid 1px $border-more-shade
+  +text-block(.75rem 1, flex 800)
+  align-items: center
+  justify-content: center
+  margin-left: .75rem
+  height: 1.5rem
+  border-radius: .1875rem
+  +position(relative)
+  min-width: 2.5rem
+  &::before,
+  &::after
+    content: ""
+    display: block
+    +size(0)
+    border-style: solid
+    border-color: transparent
+    border-width: .375rem .5rem
+    border-right-color: $border-more-shade
+    +position(absolute, top 50%)
+    transform: translate(0, -50%)
+  &::before
+    border-right-color: $border-more-shade
+    +position(left -1rem)
+  &::after
+    border-right-color: $base
+    +position(left calc(-1rem + .125rem))

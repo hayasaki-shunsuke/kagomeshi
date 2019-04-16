@@ -2,4 +2,12 @@ header.header
   .container
     .header__inner
       .header__logo
-        | かごメシ
+        = link_to root_path, class: "header__logo-link" do
+          = image_tag("logo.svg", class: "header__logo-image", alt: "かごメシ")
+      - if user_signed_in?
+        nav.header__nav
+          ul.header__nav-items
+            li.header__nav-item
+              = link_to 'Edit profile', edit_user_registration_path, class: 'navbar-link'
+            li.header__nav-item
+              = link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link'
