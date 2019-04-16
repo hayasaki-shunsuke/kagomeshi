@@ -3,7 +3,7 @@ html
   head
     title Kagomeshi
     = render "head"
-  body(class= "#{namespace} #{body_class}")
+  body(class="#{namespace} #{body_class}")
     .wrapper
       .wrapper__main
         - if body_class.exclude?("is-auth")

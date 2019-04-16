@@ -12,4 +12,5 @@ header.header
             li.header__nav-item
               = link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link'
             li.header__nav-item
-              = image_tag current_user.avatar.variant(resize: "50x50")
+              - if current_user.avatar.attached?
+                = image_tag current_user.avatar.variant(resize: "50x50")
