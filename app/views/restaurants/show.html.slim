@@ -1,5 +1,3 @@
-p#notice = notice
-
 p
   strong Restaurant name:
   = @restaurant.restaurant_name
@@ -12,6 +10,22 @@ p
 p
   strong Memo:
   = @restaurant.memo
+
+h2 コメント
+
+= render "comments/form", comment: @comment
+
+ul
+  - @restaurant.comments.order(created_at: :desc).each do |comment|
+    li.comment
+      .body= comment.body
+      .created_at= l comment.created_at
+      .user
+        .email= comment.user.email
+    - if comment.user == current_user
+      ul
+        li= link_to "編集", edit_comment_path(comment)
+        li= link_to "削除", comment, method: :delete, data: { confirm: "本当によろしいですか？" }
 
 => link_to 'Edit', edit_restaurant_path(@restaurant)
 '|
