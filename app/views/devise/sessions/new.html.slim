@@ -1,18 +1,29 @@
-h2
-  | Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    br
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    br
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+- content_for(:extra_body_classes, "is-auth")
+
+
+.page__body
+  .auth
+    .container.is-xs
+      = image_tag("logo.svg", class: "auth__logo-image", alt: "かごメシ")
+      h1.auth__title
+        | ログイン
+      .card
+        .card__body
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .field
+              = f.label :email, class: "a-form-label"
+              br
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: "a-text-input"
+              br
+            .field
+              = f.label :password, class: "a-form-label"
+              br
+              = f.password_field :password, autocomplete: "current-password", class: "a-text-input"
+            - if devise_mapping.rememberable?
+              .field
+                = f.check_box :remember_me, class: "a-checkbox"
+                span
+                  | 次回から自動的にログイン
+            .actions
+              = f.submit "ログイン", class: "a-button is-md is-primary is-block"
+          / = render "devise/shared/links"
