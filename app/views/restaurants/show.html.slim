@@ -42,7 +42,7 @@
                     = link_to edit_restaurant_path(@restaurant), class: "a-button is-sm is-primary is-block" do
                       | 編集
                   .card__actions-item
-                    = link_to "", class: "a-button is-sm is-danger is-block" do
+                    = link_to restaurant_path(@restaurant), data: { confirm: "本当によろしいですか？" }, method: :delete, class: "a-button is-sm is-danger is-block"  do
                       | 削除
 
 .page__body
