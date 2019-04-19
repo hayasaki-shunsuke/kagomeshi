@@ -1,29 +1,47 @@
-.page__body
+- content_for(:extra_body_classes, "is-restaurants-index")
+
+.main-visual
   .container
-    h1 Listing restaurants
+    .main-visual__inner
+      h1.main-visual__title
+        | 鹿児島へようこそ
+      .main-visual__description
+        | かごメシはあああああああああああああああああです
 
-    table
-      thead
-        tr
-          th Restaurant name
-          th Address
-          th Business hours
-          th Memo
-          th
-          th
-          th
-
-      tbody
+.restaurants
+  .container
+    h1.restaurants__title
+      | 僕らのオススメのお店
+    .restaurants__items
+      .row
         - @restaurants.each do |restaurant|
-          tr
-            td = restaurant.restaurant_name
-          td = restaurant.address
-            td = restaurant.business_hours
-            td = restaurant.memo
-            td = link_to 'Show', restaurant
-            td = link_to 'Edit', edit_restaurant_path(restaurant)
-            td = link_to 'Destroy', restaurant, data: { confirm: 'Are you sure?' }, method: :delete
-
-    br
-
-    = link_to 'New Restaurant', new_restaurant_path
+          .col-md-4
+            .restaurants__item
+              = link_to restaurant, class: "restaurants__item-link" do
+                .card
+                  = image_tag("samples/restaurants/restaurant_1.png", class: "restaurants__item-image", alt: "レストラン名ああああああ")
+                  .card__body
+                    h2.restaurants__item-name
+                      = restaurant.restaurant_name
+                    .restaurants__item-description
+                      / = simple_format("どんな小さな羽さえもそよがぬ 弱い息のお話をせがむとは！でもこの哀れな声一つ三つあわせた舌に逆らえましょうか？居丈だかなプリマがまずは唱えるその宣告は「おはじめなさい」すこし優しげに二番手の希望")
+                      = simple_format(restaurant.memo)
+                  .card__footer
+                    .restaurants__item-counts
+                      .restaurants__item-counts-items
+                        .restaurants__item-counts-item
+                          .restaurants__item-counts-item-label
+                            i.fas.fa-comment
+                          .restaurants__item-counts-item-number
+                            | 100
+                        .restaurants__item-counts-item
+                          .restaurants__item-counts-item-label
+                            i.fas.fa-user
+                          .restaurants__item-counts-item-number
+                            | 100
+.restaurant-actions
+  .container.is-md
+    .restaurant-actions__items
+      .restaurant-actions__item
+        = link_to new_restaurant_path, class: "a-button is-sm is-danger is-block" do
+          | 新規登録
