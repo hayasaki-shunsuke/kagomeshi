@@ -19,7 +19,8 @@
             .restaurants__item
               = link_to restaurant, class: "restaurants__item-link" do
                 .card
-                  = image_tag("samples/restaurants/restaurant_1.png", class: "restaurants__item-image", alt: "レストラン名ああああああ")
+                  - if restaurant.image.attached?
+                    = image_tag(restaurant.image, class: "restaurants__item-image", alt: "レストラン名ああああああ")
                   .card__body
                     h2.restaurants__item-name
                       = restaurant.restaurant_name
