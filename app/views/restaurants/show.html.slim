@@ -2,7 +2,7 @@
 
 .restaurant
   header.restaurant__header
-    = image_tag("samples/restaurants/restaurant_1.png", class: "restaurant__header-image", alt: "レストラン名ああああああ")
+    = image_tag(@restaurant.image, class: "restaurant__header-image", alt: "レストラン名ああああああ")
     .container.is-md
       .restaurant__header-inner
   .restaurant__body
@@ -13,6 +13,8 @@
             header.card__header
               h2.card__title.is-lg
                 = @restaurant.restaurant_name
+                - if @restaurant.image.attached?
+                  = image_tag @restaurant.image.variant(resize: "600x600")
             .card__body
               .restaurant__description
                 h2.restaurant__description-title
