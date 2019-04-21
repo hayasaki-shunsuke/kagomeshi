@@ -20,6 +20,9 @@
       .form__item
         = f.label :memo, class: "a-form-label"
         = f.text_area :memo, class: "a-text-input"
+      .form__item
+        = f.label :picture, class: "a-form-label"
+        = f.file_field :image, class: "a-text-input", type: "file"
     .form__actions
       ul.form__actions-items
         li.form__actions-item
