@@ -1,13 +1,25 @@
-- url = comment.persisted? ? comment : comments_path
-- method = comment.persisted? ? "PUT" : "POST"
-= form_with model: comment, url: url , method: method, local: true do |f|
-  - if comment.errors.any?
+= form_for @comment, class: "form" do |f|
+  - if @comment.errors.any?
     #error_explanation
-      h2 = "#{pluralize(comment.errors.count, "error")} prohibited this comment from being saved:"
+      h2 = "#{pluralize(@comment.errors.count, "error")} prohibited this comment from being saved:"
       ul
-        - comment.errors.full_messages.each do |message|
+        - @comment.errors.full_messages.each do |message|
           li = message
-
-  = f.hidden_field :restaurant_id
-  = f.text_area :body
-  = f.submit
+= form_for @comment, class: "form" do |f|
+  .page__body
+    .container.is-sm
+      .card
+        .card__body
+          form.form
+            .form__items
+              .form__item
+                = f.label :picture, class: "a-form-label"
+                = f.file_field :image, class: "a-text-input", type: "file"
+              .form__item
+                = f.label :body, class: "a-form-label"
+                = f.text_area :body, class: "a-text-input"
+              .form__actions
+                ul.form__actions-items
+                  li.form__actions-item
+                    = f.submit class: "a-button is-md is-primary is-block"
+                = f.hidden_field :restaurant_id

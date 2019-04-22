@@ -2,7 +2,8 @@
 
 .restaurant
   header.restaurant__header
-    = image_tag(@restaurant.image, class: "restaurant__header-image", alt: "レストラン名ああああああ")
+    - if @restaurant.image.attached?
+      = image_tag(@restaurant.image, class: "restaurant__header-image", alt: "レストラン名ああああああ")
     .container.is-md
       .restaurant__header-inner
   .restaurant__body
@@ -13,8 +14,8 @@
             header.card__header
               h2.card__title.is-lg
                 = @restaurant.restaurant_name
-                - if @restaurant.image.attached?
-                  = image_tag @restaurant.image.variant(resize: "600x600")
+              - if @restaurant.image.attached?
+                = image_tag @restaurant.image.variant(resize: "600x600")
             .card__body
               .restaurant__description
                 h2.restaurant__description-title
@@ -46,73 +47,46 @@
                   .card__actions-item
                     = link_to restaurant_path(@restaurant), data: { confirm: "本当によろしいですか？" }, method: :delete, class: "a-button is-sm is-danger is-block"  do
                       | 削除
-
 .page__body
   .comments
     .container.is-md
       .comments__items
         - @restaurant.comments.order(created_at: :desc).each do |comment|
-        .comments__item
-          .comments__item-author
-            = image_tag("samples/users/user-1.jpg", alt: "コメント投稿者のニックネーム", class: "comments__item-author-image")
-          .comments__item-main
-            .card
-              header.card__header
-                .comments__item-meta
-                  h3.comments__item-author-name
-                    | コメント投稿者ニックネーム
-                  .comments__item-created-at
-                    | 2019年12月18日 19:30
-              .card__body
-                .comments__item-body
-                  = image_tag("samples/restaurants/restaurant_1.png", alt: "レストラン名ああああああ")
-                  p
-                    | どんな小さな羽さえもそよがぬ 弱い息のお話をせがむとは！でもこの哀れな声一つ三つあわせた舌に逆らえましょうか？居丈だかなプリマがまずは唱えるその宣告は「おはじめなさい」すこし優しげに二番手の希望
-                  p
-                    | どんな小さな羽さえもそよがぬ 弱い息のお話をせがむとは！でもこの哀れな声一つ三つあわせた舌に逆らえましょうか？居丈だかなプリマがまずは唱えるその宣告は「おはじめなさい」すこし優しげに二番手の希望
-                  .comments__item-action-container
-                    .a-button.is-xs.is-warning
-                      | 羨ましい！
-                    .comments__item-action-count
-                      | 100
-
-        .comments__item.is-mine
-          // 自分の投稿のときは is-mine を付ける
-          .comments__item-author
-            = image_tag("samples/users/user-2.jpg", alt: "コメント投稿者のニックネーム", class: "comments__item-author-image")
-          .comments__item-main
-            .card
-              header.card__header
-                .comments__item-meta
-                  h3.comments__item-author-name
-                    | コメント投稿者ニックネーム
-                  .comments__item-created-at
-                    | 2019年12月18日 19:30
-              .card__body
-                .comments__item-body
-                  p
-                    | どんな小さな羽さえもそよがぬ 弱い息のお話をせがむとは！でもこの哀れな声一つ三つあわせた舌に逆らえましょうか？居丈だかなプリマがまずは唱えるその宣告は「おはじめなさい」すこし優しげに二番手の希望
-                  p
-                    | どんな小さな羽さえもそよがぬ 弱い息のお話をせがむとは！でもこの哀れな声一つ三つあわせた舌に逆らえましょうか？居丈だかなプリマがまずは唱えるその宣告は「おはじめなさい」すこし優しげに二番手の希望
-                  .comments__item-action-container
-                    .a-button.is-xs.is-warning
-                      | 羨ましい！
-                    .comments__item-action-count
-                      | 100
-              .card__footer
-                // card__footer は自分のコメントだけ表示
-                .card__actions
-                  .card__actions-items
-                    .card__actions-item
-                      = link_to "", class: "a-button is-sm is-primary is-block" do
-                        | 編集
-                    .card__actions-item
-                      = link_to "", class: "a-button is-sm is-danger is-block" do
-                        | 削除
-
+          .comments__item(class="#{comment.user == current_user ? "is-mine" : ""}")
+            // 自分の投稿のときは is-mine を付ける
+            .comments__item-author
+              = image_tag(comment.user.avatar, alt: "コメント投稿者のニックネーム", class: "comments__item-author-image")
+            .comments__item-main
+              .card
+                header.card__header
+                  .comments__item-meta
+                    h3.comments__item-author-name
+                      = comment.user.email
+                    .comments__item-created-at
+                      = comment.created_at.to_s(:datetime_jp)
+                .card__body
+                  .comments__item-body
+                    p
+                      = comment.body
+                    .comments__item-action-container
+                      .a-button.is-xs.is-warning
+                        | 羨ましい！
+                      .comments__item-action-count
+                        | 100
+                - if comment.user == current_user
+                  .card__footer
+                    // card__footer は自分のコメントだけ表示
+                    .card__actions
+                      .card__actions-items
+                        .card__actions-item
+                          = link_to edit_comment_path(comment), class: "a-button is-sm is-primary is-block" do
+                            | 編集
+                        .card__actions-item
+                          = link_to comment_path(comment), data: {confirm: "本当によろしいですか？"}, method: :delete, class: "a-button is-sm is-danger is-block"  do
+                            | 削除
 .restaurant-actions
   .container.is-md
     .restaurant-actions__items
       .restaurant-actions__item
-        = link_to "", class: "a-button is-primary is-md is-block" do
+        = link_to new_comment_path(restaurant_id: @restaurant.id), class: "a-button is-primary is-md is-block" do
           | コメント投稿
