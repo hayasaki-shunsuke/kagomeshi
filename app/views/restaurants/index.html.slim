@@ -25,7 +25,6 @@
                     h2.restaurants__item-name
                       = restaurant.restaurant_name
                     .restaurants__item-description
-                      / = simple_format("どんな小さな羽さえもそよがぬ 弱い息のお話をせがむとは！でもこの哀れな声一つ三つあわせた舌に逆らえましょうか？居丈だかなプリマがまずは唱えるその宣告は「おはじめなさい」すこし優しげに二番手の希望")
                       = simple_format(restaurant.memo)
                   .card__footer
                     .restaurants__item-counts
@@ -34,7 +33,7 @@
                           .restaurants__item-counts-item-label
                             i.fas.fa-comment
                           .restaurants__item-counts-item-number
-                            | 100
+                            = restaurant.comments.count
                         .restaurants__item-counts-item
                           .restaurants__item-counts-item-label
                             i.fas.fa-user
