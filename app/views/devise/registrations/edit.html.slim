@@ -40,8 +40,8 @@ header.page__header
                 .a-form-help.a-short-text-style
                   p
                     | we need your current password to confirm your changes
-            .field
-              = f.label :picture, class: "a-form-label"
+            .form__item
+              = f.label :avatar, class: "a-form-label"
               = f.file_field :avatar, class: "a-text-input"
           .form__actions
             ul.form__actions-items
