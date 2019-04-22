@@ -1,13 +1,62 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+restaurant1:
+  restaurant_name: レストラン1
+  address: 住所1
+  business_hours: 10:00-19:00
+  memo: メモ1
+  created_at: 2010-01-01 00:00:01
 
-one:
-  restaurant_name: MyString
-  address: MyString
-  business_hours: MyText
-  memo: MyText
+restaurant2:
+  restaurant_name: レストラン2
+  address: 住所2
+  business_hours: 10:00-19:00
+  memo: メモ2
+  created_at: 2010-01-01 00:00:02
 
-two:
-  restaurant_name: MyString
-  address: MyString
-  business_hours: MyText
-  memo: MyText
+restaurant3:
+  restaurant_name: レストラン3
+  address: 住所3
+  business_hours: 10:00-19:00
+  memo: メモ3
+  created_at: 2010-01-01 00:00:03
+
+restaurant4:
+  restaurant_name: レストラン4
+  address: 住所4
+  business_hours: 10:00-19:00
+  memo: メモ4
+  created_at: 2010-01-01 00:00:04
+
+restaurant5:
+  restaurant_name: レストラン5
+  address: 住所5
+  business_hours: 10:00-19:00
+  memo: メモ5
+  created_at: 2010-01-01 00:00:05
+
+restaurant6:
+  restaurant_name: レストラン6
+  address: 住所6
+  business_hours: 10:00-19:00
+  memo: メモ6
+  created_at: 2010-01-01 00:00:06
+
+restaurant7:
+  restaurant_name: レストラン7
+  address: 住所7
+  business_hours: 10:00-19:00
+  memo: メモ7
+  created_at: 2010-01-01 00:00:07
+
+restaurant8:
+  restaurant_name: レストラン8
+  address: 住所8
+  business_hours: 10:00-19:00
+  memo: メモ8
+  created_at: 2010-01-01 00:00:08
+
+restaurant9:
+  restaurant_name: レストラン9
+  address: 住所9
+  business_hours: 10:00-19:00
+  memo: メモ9
+  created_at: 2010-01-01 00:00:09
