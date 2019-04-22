@@ -1,5 +1,10 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:edit, :update, :destroy]
+  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+
+  # GET /comments/new
+  def new
+    @comment = Comment.new(restaurant_id:params[:restaurant_id])
+  end
 
   def edit
   end
