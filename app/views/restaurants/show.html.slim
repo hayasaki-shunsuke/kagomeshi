@@ -66,6 +66,8 @@
                       = comment.created_at.to_s(:datetime_jp)
                 .card__body
                   .comments__item-body
+                    - if comment.image.attached?
+                        = image_tag comment.image.variant(resize: "600x600")
                     p
                       = comment.body
                     .comments__item-action-container
