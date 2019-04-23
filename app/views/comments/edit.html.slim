@@ -1,3 +1,9 @@
-h1 コメント編集
+.page__header
+  .container.is-md
+    .page__header-inner
+      h1.page__title
+        =t :edit_comment
 
 == render "form", comment: @comment
+
+=< link_to t("back"), restaurant_path(@comment.restaurant_id)
