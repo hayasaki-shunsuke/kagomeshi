@@ -1,0 +1,42 @@
+- content_for(:extra_body_classes, "is-users-show")
+
+.user
+  .user__header
+    .container.is-md
+      .user__header-inner
+        h1.user__name
+          = @user.nickname
+        = image_tag @user.avatar, alt: @user.nickname, class: "user__image"
+
+.page__body
+  .comments
+    .container.is-md
+      .comments__items
+        - @user.comments.order(created_at: :desc).each do |comment|
+          .comments__item(class="#{comment.user == current_user ? "is-mine" : ""}")
+            .card
+              header.card__header
+                .comments__item-meta
+                  h3.comments__item-author-name
+                    = comment.restaurant.restaurant_name
+                  .comments__item-created-at
+                    = l comment.created_at
+              .card__body
+                .comments__item-body
+                  = image_tag "samples/restaurants/restaurant_1.png", alt: comment.restaurant.restaurant_name
+                  = simple_format comment.body
+                  .comments__item-action-container
+                    .a-button.is-xs.is-warning
+                      | 羨ましい！
+                    .comments__item-action-count
+                      | 100
+              - if comment.user == current_user
+                .card__footer
+                  .card__actions
+                    .card__actions-items
+                      .card__actions-item
+                        = link_to edit_comment_path(comment), class: "a-button is-sm is-primary is-block" do
+                          | 編集
+                      .card__actions-item
+                        = link_to comment, method: :delete, data: { confirm: "本当によろしいですか？" }, class: "a-button is-sm is-danger is-block" do
+                          | 削除

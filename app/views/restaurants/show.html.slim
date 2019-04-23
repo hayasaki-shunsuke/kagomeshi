@@ -56,13 +56,13 @@
           .comments__item(class="#{comment.user == current_user ? "is-mine" : ""}")
             // 自分の投稿のときは is-mine を付ける
             .comments__item-author
-              = image_tag(comment.user.avatar, alt: "コメント投稿者のニックネーム", class: "comments__item-author-image")
+              = link_to comment.user do
+                = image_tag comment.user.avatar, alt: comment.user.nickname, class: "comments__item-author-image"
             .comments__item-main
               .card
                 header.card__header
                   .comments__item-meta
-                    h3.comments__item-author-name
-                      = comment.user.nickname
+                    h3.comments__item-author-name = link_to comment.user.nickname, comment.user
                     .comments__item-created-at
                       = comment.created_at.to_s(:datetime_jp)
                 .card__body
