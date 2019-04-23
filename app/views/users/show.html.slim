@@ -18,12 +18,13 @@
               header.card__header
                 .comments__item-meta
                   h3.comments__item-author-name
-                    = comment.restaurant.name
+                    = link_to comment.restaurant.name, comment.restaurant
                   .comments__item-created-at
                     = l comment.created_at
               .card__body
                 .comments__item-body
-                  = image_tag comment.restaurant.image, alt: comment.restaurant.restaurant_name
+                  - if comment.image.attached?
+                    = image_tag comment.image.variant(resize: "600x600") ,alt: comment.restaurant.name
                   = simple_format comment.body
                   .comments__item-action-container
                     .a-button.is-xs.is-warning
