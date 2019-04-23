@@ -18,12 +18,12 @@
               header.card__header
                 .comments__item-meta
                   h3.comments__item-author-name
-                    = comment.restaurant.restaurant_name
+                    = comment.restaurant.name
                   .comments__item-created-at
                     = l comment.created_at
               .card__body
                 .comments__item-body
-                  = image_tag "samples/restaurants/restaurant_1.png", alt: comment.restaurant.restaurant_name
+                  = image_tag "samples/restaurants/restaurant_1.png", alt: comment.restaurant.name
                   = simple_format comment.body
                   .comments__item-action-container
                     .a-button.is-xs.is-warning
