@@ -1,0 +1,34 @@
+ja:
+  date:
+    formats:
+      default: "%Y年%m月%d日(%a)"
+      short: "%Y/%m/%d"
+  time:
+    formats:
+      default: "%Y年%m月%d日(%a) %H:%M"
+      short: "%Y/%m/%d %H:%M"
+      time_only: "%H:%M"
+  back: 戻る
+  new_restaurant: お店情報
+  restaurant_name: 店名
+  address: 住所
+  business_hours: 営業時間
+  memo: コメント
+  image: 画像
+  show: 店舗詳細
+  editing_restaurant: お店変更情報
+  edit: 編集
+  delete: 削除
+  post_comment: コメント投稿
+  new_comment: コメント登録
+  edit_comment: コメント編集
+  body: コメント内容
+  edit_profile: プロフィール編集
+  logout: ログアウト
+  helpers:
+    select:
+      prompt: 選択してください
+    submit:
+      create: 登録
+      submit: 保存
+      update: 更新
