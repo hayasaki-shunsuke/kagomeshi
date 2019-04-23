@@ -10,19 +10,19 @@ ja:
       time_only: "%H:%M"
   back: 戻る
   new_restaurant: お店情報
-  restaurant_name: 店名
+  name: 店名
   address: 住所
   business_hours: 営業時間
   memo: コメント
   image: 画像
   show: 店舗詳細
-  editing_restaurant: お店変更情報
+  editing_restaurant: お店情報編集
   edit: 編集
   delete: 削除
   post_comment: コメント投稿
   new_comment: コメント登録
   edit_comment: コメント編集
-  body: コメント内容
+  body: コメント
   edit_profile: プロフィール編集
   logout: ログアウト
   helpers:
