@@ -16,7 +16,7 @@ namespace :db do
       end
 
       Restaurant.order(:created_at).each do |restaurant|
-        filename = "#{restaurant.restaurant_name}.jpg"
+        filename = "#{restaurant.name}.jpg"
         dir = Rails.root.join("test", "fixtures", "files", "restaurants", "images")
         path = Rails.root.join(dir, filename)
         unless File.exist?(path)

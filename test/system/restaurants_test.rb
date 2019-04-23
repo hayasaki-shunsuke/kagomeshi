@@ -17,7 +17,7 @@ class RestaurantsTest < ApplicationSystemTestCase
     fill_in "Address", with: @restaurant.address
     fill_in "Business hours", with: @restaurant.business_hours
     fill_in "Memo", with: @restaurant.memo
-    fill_in "Restaurant name", with: @restaurant.restaurant_name
+    fill_in "Restaurant name", with: @restaurant.name
     click_on "Create Restaurant"
 
     assert_text "Restaurant was successfully created"
@@ -31,7 +31,7 @@ class RestaurantsTest < ApplicationSystemTestCase
     fill_in "Address", with: @restaurant.address
     fill_in "Business hours", with: @restaurant.business_hours
     fill_in "Memo", with: @restaurant.memo
-    fill_in "Restaurant name", with: @restaurant.restaurant_name
+    fill_in "Restaurant name", with: @restaurant.name
     click_on "Update Restaurant"
 
     assert_text "Restaurant was successfully updated"

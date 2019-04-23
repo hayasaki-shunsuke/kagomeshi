@@ -13,7 +13,7 @@
           .card
             header.card__header
               h2.card__title.is-lg
-                = @restaurant.restaurant_name
+                = @restaurant.name
               - if @restaurant.image.attached?
                 = image_tag @restaurant.image.variant(resize: "600x600")
             .card__body
