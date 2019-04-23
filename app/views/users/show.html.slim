@@ -23,7 +23,7 @@
                     = l comment.created_at
               .card__body
                 .comments__item-body
-                  = image_tag "samples/restaurants/restaurant_1.png", alt: comment.restaurant.restaurant_name
+                  = image_tag comment.restaurant.image, alt: comment.restaurant.restaurant_name
                   = simple_format comment.body
                   .comments__item-action-container
                     .a-button.is-xs.is-warning
