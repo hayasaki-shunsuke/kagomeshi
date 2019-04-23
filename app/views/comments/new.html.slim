@@ -1,5 +1,9 @@
-h1 New comment
+.page__header
+  .container.is-md
+    .page__header-inner
+      h1.page__title
+        =t :new_comment
 
 == render 'form'
 
-= link_to 'Back', comments_path
+= link_to t('back'), restaurant_path(@comment.restaurant_id)
