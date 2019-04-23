@@ -2,8 +2,8 @@
   .container.is-md
     .page__header-inner
       h1.page__title
-        | New restaurant
+        =t :new_restaurant
 
 .page__body
   == render 'form'
-  = link_to 'Back', restaurants_path
+  = link_to t("back"), restaurants_path
