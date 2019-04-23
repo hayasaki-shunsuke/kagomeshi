@@ -27,7 +27,7 @@
                 table.a-table
                   .tbody
                     tr
-                      th 所在地
+                      th 住所
                       td
                         = link_to "https://www.google.co.jp/maps/place/" + @restaurant.address , class: "", target: "_blank" do
                           = @restaurant.address
@@ -44,10 +44,10 @@
                 .card__actions-items
                   .card__actions-item
                     = link_to edit_restaurant_path(@restaurant), class: "a-button is-sm is-primary is-block" do
-                      | 編集
+                      =t :edit
                   .card__actions-item
                     = link_to restaurant_path(@restaurant), data: { confirm: "本当によろしいですか？" }, method: :delete, class: "a-button is-sm is-danger is-block"  do
-                      | 削除
+                      =t :delete
 .page__body
   .comments
     .container.is-md
@@ -63,8 +63,8 @@
                 header.card__header
                   .comments__item-meta
                     h3.comments__item-author-name = link_to comment.user.nickname, comment.user
-                    .comments__item-created-at
-                      = comment.created_at.to_s(:datetime_jp)
+                    .comments__item-created-at(datetime="#{comment.created_at.to_datetime}" pubdate="pubdate")
+                      = l comment.created_at
                 .card__body
                   .comments__item-body
                     - if comment.image.attached?
@@ -83,13 +83,13 @@
                       .card__actions-items
                         .card__actions-item
                           = link_to edit_comment_path(comment), class: "a-button is-sm is-primary is-block" do
-                            | 編集
+                            =t :edit
                         .card__actions-item
                           = link_to comment_path(comment), data: {confirm: "本当によろしいですか？"}, method: :delete, class: "a-button is-sm is-danger is-block"  do
-                            | 削除
+                            =t :delete
 .restaurant-actions
   .container.is-md
     .restaurant-actions__items
       .restaurant-actions__item
         = link_to new_comment_path(restaurant_id: @restaurant.id), class: "a-button is-primary is-md is-block" do
-          | コメント投稿
+          =t :post_comment
