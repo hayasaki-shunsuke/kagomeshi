@@ -1,8 +1,9 @@
-h1 Editing restaurant
+.page__header
+  .container.is-md
+    .page__header-inner
+      h1.page__title
+        =t :editing_restaurant
 
 == render 'form'
 
-=> link_to 'Show', @restaurant
-'|
-=< link_to 'Back', restaurants_path
-
+=< link_to t("back"), @restaurant
