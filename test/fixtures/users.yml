@@ -1,17 +1,17 @@
 user1:
-  nickname: ユーザー1
+  nickname: user1
   email: user1@example.com
   encrypted_password: $2a$11$Ui3kBOa5ywWGdz1XzO6OMeDWPEVi/fP4eawqQYdhRmbYoMaDOdcDC # testtest
   created_at: 2010-01-01 00:00:01
 
 user2:
-  nickname: ユーザー2
+  nickname: user2
   email: user2@example.com
   encrypted_password: $2a$11$Ui3kBOa5ywWGdz1XzO6OMeDWPEVi/fP4eawqQYdhRmbYoMaDOdcDC # testtest
   created_at: 2010-01-01 00:00:02
 
 user3:
-  nickname: ユーザー3
+  nickname: user3
   email: user3@example.com
   encrypted_password: $2a$11$Ui3kBOa5ywWGdz1XzO6OMeDWPEVi/fP4eawqQYdhRmbYoMaDOdcDC # testtest
   created_at: 2010-01-01 00:00:03

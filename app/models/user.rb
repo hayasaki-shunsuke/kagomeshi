@@ -9,6 +9,14 @@ class User < ApplicationRecord
 
   validates :nickname,
     presence: true,
+    uniqueness: true,
     length: { maximum: 32 },
-    uniqueness: true
+    format: {
+      with: /\A[a-z0-9_]+\z/i,
+      message: "は半角英数・アンダースコアのみで入力してください"
+    }
+
+  def to_param
+    nickname
+  end
 end

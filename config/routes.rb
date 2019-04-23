@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :restaurants
   resources :comments
-  resources :users, only: %i(show)
+  get "/@:nickname", controller: "users", action: "show", as: :user
 end
