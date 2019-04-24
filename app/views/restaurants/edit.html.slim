@@ -4,6 +4,6 @@
       h1.page__title
         =t :editing_restaurant
 
-== render 'form'
-
-=< link_to t("back"), @restaurant
+.page__body
+  == render 'form'
+  =< link_to t("back"), @restaurant
