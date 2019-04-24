@@ -13,11 +13,11 @@
           form.form
             .form__items
               .form__item
-                = f.label :picture, class: "a-form-label"
-                = f.file_field :image, class: "a-text-input", type: "file"
-              .form__item
-                = f.label :body, class: "a-form-label"
+                = f.label t(:body), class: "a-form-label"
                 = f.text_area :body, class: "a-text-input"
+              .form__item
+                = f.label t(:image), class: "a-form-label"
+                = f.file_field :image, class: "a-text-input", type: "file"
               .form__actions
                 ul.form__actions-items
                   li.form__actions-item

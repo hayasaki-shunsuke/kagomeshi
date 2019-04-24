@@ -9,19 +9,19 @@
   .container.is-md
     .form__items
       .form__item
-        = f.label :name, class: "a-form-label"
+        = f.label t(:name), class: "a-form-label"
         = f.text_field :name, class: "a-text-input"
       .form__item
-        = f.label :address, class: "a-form-label"
+        = f.label t(:address), class: "a-form-label"
         = f.text_field :address, class: "a-text-input"
       .form__item
-        = f.label :business_hours, class: "a-form-label"
+        = f.label t(:business_hours), class: "a-form-label"
         = f.text_area :business_hours, class: "a-text-input"
       .form__item
-        = f.label :memo, class: "a-form-label"
+        = f.label t(:memo), class: "a-form-label"
         = f.text_area :memo, class: "a-text-input"
       .form__item
-        = f.label :picture, class: "a-form-label"
+        = f.label t(:image), class: "a-form-label"
         = f.file_field :image, class: "a-text-input", type: "file"
     .form__actions
       ul.form__actions-items

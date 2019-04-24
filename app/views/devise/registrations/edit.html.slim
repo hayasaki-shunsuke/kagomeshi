@@ -3,8 +3,7 @@ header.page__header
   .container
     .page__header-inner
       h2.page__title
-        | Edit
-        = resource_name.to_s.humanize
+        =t :edit_profile
 .page__body
   = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class: "form") do |f|
     .container.is-sm
@@ -26,11 +25,6 @@ header.page__header
               = f.password_field :password, autocomplete: "new-password", class: "a-text-input"
               - if @minimum_password_length
                 .a-form-help.a-short-text-style
-                  p
-                    | leave blank if you don't want to change it.
-                    br
-                    = @minimum_password_length
-                    |  characters minimum
             .form__item
               = f.label :password_confirmation, class: "a-form-label"
               = f.password_field :password_confirmation, autocomplete: "new-password", class: "a-text-input"
@@ -40,10 +34,10 @@ header.page__header
                 .a-form-help.a-short-text-style
                   p
                     | we need your current password to confirm your changes
-            .field
-              = f.label :picture, class: "a-form-label"
+            .form__item
+              = f.label :avatar, class: "a-form-label"
               = f.file_field :avatar, class: "a-text-input"
           .form__actions
             ul.form__actions-items
               li.form__actions-item
-                = f.submit "Update", class: "a-button is-primary is-md is-block"
+                = f.submit class: "a-button is-primary is-md is-block"
