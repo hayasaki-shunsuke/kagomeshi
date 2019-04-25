@@ -10,7 +10,7 @@
         br
         | 鹿児島の夜は私たちにお任せください！美味しいかごメシを食べて最高の出張にしましょう！！
 
-.restaurants
+.restaurants.page__body
   .container
     h1.restaurants__title
       | 僕らのオススメのお店
@@ -41,9 +41,3 @@
                             i.fas.fa-user
                           .restaurants__item-counts-item-number
                             | 100
-.restaurant-actions
-  .container.is-md
-    .restaurant-actions__items
-      .restaurant-actions__item
-        = link_to new_restaurant_path, class: "a-button is-sm is-danger is-block" do
-          | 新規登録

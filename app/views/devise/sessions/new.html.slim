@@ -1,6 +1,5 @@
 - content_for(:extra_body_classes, "is-auth")
 
-
 .page__body
   .auth
     .container.is-xs
@@ -9,21 +8,21 @@
         | ログイン
       .card
         .card__body
-          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-            .field
-              = f.label :email, class: "a-form-label"
-              br
-              = f.email_field :email, autofocus: true, autocomplete: "email", class: "a-text-input"
-              br
-            .field
-              = f.label :password, class: "a-form-label"
-              br
-              = f.password_field :password, autocomplete: "current-password", class: "a-text-input"
-            - if devise_mapping.rememberable?
-              .field
-                = f.check_box :remember_me, class: "a-checkbox"
-                span
-                  | 次回から自動的にログイン
-            .actions
+          = form_for(resource, as: resource_name, url: session_path(resource_name), class: "form") do |f|
+            .form__items
+              .form__item
+                = f.label :email, class: "a-form-label"
+                = f.email_field :email, autofocus: true, autocomplete: "email", class: "a-text-input"
+              .form__item
+                = f.label :password, class: "a-form-label"
+                = f.password_field :password, autocomplete: "current-password", class: "a-text-input"
+              //
+                - if devise_mapping.rememberable?
+                  .form__item
+                    .a-checkbox
+                      = f.check_box :remember_me
+                      span
+                        | 次回から自動的にログイン
+            .form__actions
               = f.submit "ログイン", class: "a-button is-md is-primary is-block"
           / = render "devise/shared/links"

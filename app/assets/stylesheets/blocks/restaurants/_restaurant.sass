@@ -1,6 +1,6 @@
 .restaurant__header
   +size(100% 10rem)
-  +position(relative)
+  +position(relative, 1)
   overflow: hidden
   +media-breakpoint-down(sm)
     height: 6rem
@@ -35,4 +35,25 @@
   +text-block(1rem 1.4, 800)
 
 .restaurant__basic-data
-  margin-top: 1.5rem
+  +media-breakpoint-up(md)
+    margin-top: 1.5rem
+    display: flex
+  +media-breakpoint-down(sm)
+    margin-top: 1rem
+  .a-table
+    flex: 100
+  th
+    white-space: nowrap
+  td
+    p
+      line-height: 1.5
+
+.restaurant__main-image
+  object-fit: cover
+  +media-breakpoint-up(md)
+    flex-basis: 10rem
+    +size(10rem 7rem)
+    margin-right: 1rem
+  +media-breakpoint-down(sm)
+    +size(100% 7rem)
+    margin-bottom: 1rem

@@ -9,14 +9,25 @@ header.header
           ul.header__nav-items
             - if user_signed_in?
               li.header__nav-item
-                = link_to t(:edit_profile), edit_user_registration_path, class: 'navbar-link'
-              li.header__nav-item
-                = link_to t(:logout), destroy_user_session_path, method: :delete, class: 'navbar-link'
-              li.header__nav-item
-                - if current_user.avatar.attached?
-                  = image_tag current_user.avatar.variant(resize: "50x50")
+                label.header__nav-item-image-container(for="user-links")
+                  - if current_user.avatar.attached?
+                    = image_tag current_user.avatar.variant(resize: "50x50"), alt: current_user.nickname, class: "header__nav-item-user-image"
+                  - else
+                    = image_tag "user-blank.png", alt: current_user.nickname, class: "header__nav-item-user-image"
+                input.a-toggle-checkbox#user-links(type="checkbox")
+                .header__nav-dropdown
+                  ul.header__nav-dropdown-items
+                    li.header__nav-dropdown-item
+                      = link_to new_restaurant_path, class: "header__nav-dropdown-item-link" do
+                        | 店新規登録
+                    li.header__nav-dropdown-item
+                      = link_to t(:edit_profile), edit_user_registration_path, class: "header__nav-dropdown-item-link"
+                    li.header__nav-dropdown-item
+                      = link_to t(:logout), destroy_user_session_path, method: :delete, class: "header__nav-dropdown-item-link"
+                  label.header__nav-dropdown-overlay(for="user-links")
+
             - else
               li.header__nav-item
-                = link_to "サインアップ", new_user_registration_path, class: 'navbar-link'
+                = link_to "サインアップ", new_user_registration_path, class: "navbar-link"
               li.header__nav-item
-                = link_to "サインイン", new_user_session_path, class: 'navbar-link'
+                = link_to "サインイン", new_user_session_path, class: "navbar-link"

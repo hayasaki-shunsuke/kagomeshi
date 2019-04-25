@@ -1,10 +1,6 @@
-= form_for @comment, class: "form" do |f|
-  - if @comment.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@comment.errors.count, "error")} prohibited this comment from being saved:"
-      ul
-        - @comment.errors.full_messages.each do |message|
-          li = message
+- if @comment.errors.any?
+  = render "devise/shared/error_messages", resource: @comment
+
 = form_for @comment, class: "form" do |f|
   .page__body
     .container.is-sm
@@ -14,7 +10,7 @@
             .form__items
               .form__item
                 = f.label t(:body), class: "a-form-label"
-                = f.text_area :body, class: "a-text-input"
+                = f.text_area :body, class: "a-text-input is-md"
               .form__item
                 = f.label t(:image), class: "a-form-label"
                 = f.file_field :image, class: "a-text-input", type: "file"
@@ -22,4 +18,7 @@
                 ul.form__actions-items
                   li.form__actions-item
                     = f.submit class: "a-button is-md is-primary is-block"
+                .form__actions-back
+                  = link_to t('back'), restaurant_path(@comment.restaurant_id), class: "form__actions-back-link"
+
                 = f.hidden_field :restaurant_id

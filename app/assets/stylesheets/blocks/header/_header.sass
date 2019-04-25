@@ -3,7 +3,7 @@
 
 .header__inner
   height: 3.5rem
-  +position(relative)
+  +position(relative, 5)
   +media-breakpoint-down(sm)
     height: 3rem
 
@@ -17,10 +17,62 @@
   align-items: center
 
 .header__logo-image
-  +size(9.5rem auto)
+  +size(8rem auto)
   transition: all .2s ease-out
   .header__logo-link:hover &
     opacity: .7
 
 .header__nav
-  +position(absolute, right 0, top 0)
+  +position(absolute, right 0, top 0, bottom 0)
+
+.header__nav-items
+  height: 100%
+
+.header__nav-item
+  +position(relative)
+  height: inherit
+
+.header__nav-item-image-container
+  height: inherit
+  display: flex
+  align-items: center
+  justify-content: center
+  cursor: pointer
+
+.header__nav-item-user-image
+  +size(2.75rem)
+  object-fit: cover
+  border-radius: 50%
+  +media-breakpoint-down(sm)
+    +size(2.25rem)
+
+.header__nav-dropdown
+  display: none
+  input:checked + &
+    display: block
+
+.header__nav-dropdown-items
+  border-radius: .25rem
+  width: 12rem
+  background-color: $base
+  border: solid 2px $border
+  +position(absolute, right 0, top 100%, 2)
+
+.header__nav-dropdown-item
+  &:not(:first-child)
+    border-top: solid 1px $border
+
+.header__nav-dropdown-item-link
+  height: 2.75rem
+  +text-block(.875rem 1.5, flex)
+  align-items: center
+  +padding(horizontal, .75rem)
+  +hover-link
+  transition: all .2s ease-out
+  &:hover
+    background-color: rgba($main, .1)
+
+.header__nav-dropdown-overlay
+  display: block
+  +size(100vw 100vh)
+  +position(fixed, left 0, top 0, right 0, botto 0, 1)

@@ -41,3 +41,5 @@ header.page__header
             ul.form__actions-items
               li.form__actions-item
                 = f.submit class: "a-button is-primary is-md is-block"
+            .form__actions-back
+              = link_to t('back'), :back, class: "form__actions-back-link"

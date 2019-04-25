@@ -10,11 +10,23 @@ html
           = render "header"
         .page
           - if notice
-            .alert.alert-success
-              = notice
+            input.a-toggle-checkbox#flash-notice(type="checkbox")
+            .flash.is-notice
+              .container
+                .flash__inner
+                  .flash__body
+                    = notice
+                  label.flash__close(for="flash-notice")
+                    | ☓
           - if alert
-            .alert.alert-danger
-              = alert
+            input.a-toggle-checkbox#flash-alert(type="checkbox")
+            .flash.is-alert
+              .container
+                .flash__inner
+                  .flash__body
+                    = alert
+                  label.flash__close(for="flash-alert")
+                    | ☓
           = yield
       - if body_class.exclude?("is-auth") && body_class.exclude?("is-restaurants-show")
         = render "footer"

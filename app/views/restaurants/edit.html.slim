@@ -4,6 +4,8 @@
       h1.page__title
         =t :editing_restaurant
 
+- if @restaurant.errors.any?
+  = render "devise/shared/error_messages", resource:  @restaurant
+
 .page__body
   == render 'form'
-  =< link_to t("back"), @restaurant

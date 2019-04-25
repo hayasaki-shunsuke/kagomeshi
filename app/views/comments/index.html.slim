@@ -1,24 +1,5 @@
 h1 Listing comments
 
-table
-  thead
-    tr
-      th Body
-      th User
-      th Restaurant
-      th
-      th
-      th
-
-  tbody
-    - @comments.each do |comment|
-      tr
-        td = comment.body
-        td = comment.user
-        td = comment.restaurant
-        td = link_to 'Show', comment
-        td = link_to 'Edit', edit_comment_path(comment)
-        td = link_to 'Destroy', comment, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
 
