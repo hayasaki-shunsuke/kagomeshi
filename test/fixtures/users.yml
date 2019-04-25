@@ -51,3 +51,9 @@ user9:
   email: akatuura@pepabo.com
   encrypted_password: $2a$11$Ui3kBOa5ywWGdz1XzO6OMeDWPEVi/fP4eawqQYdhRmbYoMaDOdcDC # testtest
   created_at: 2010-01-01 00:00:03
+
+user10:
+  nickname: antipop
+  email: antipop@pepabo.com
+  encrypted_password: $2a$11$Ui3kBOa5ywWGdz1XzO6OMeDWPEVi/fP4eawqQYdhRmbYoMaDOdcDC # testtest
+  created_at: 2010-01-01 00:00:03
