@@ -1,17 +1,17 @@
 comment1:
-  body: コメント1
-  user: user1
+  body: 焼肉わいわい！！なべしまいいお店〜♪♪ なべしまソングも覚えちゃった！
+  user: user7
   restaurant: restaurant1
   created_at: 2010-01-01 00:00:01
 
 comment2:
-  body: コメント2
-  user: user2
+  body: 良さそうー
+  user: user8
   restaurant: restaurant1
   created_at: 2010-01-01 00:00:02
 
 comment3:
-  body: コメント3
-  user: user3
+  body: わいわい
+  user: user9
   restaurant: restaurant1
   created_at: 2010-01-01 00:00:03
