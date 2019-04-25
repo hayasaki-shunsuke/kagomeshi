@@ -4,6 +4,8 @@
 .restaurants__title
   +text-block(2rem 1.4, 800 center)
   +position(relative)
+  +media-breakpoint-down(sm)
+    font-size: 1.25rem
   &::after
     content: ""
     display: block
@@ -14,16 +16,27 @@
 
 .restaurants__items
   margin-top: 2.5rem
+  +media-breakpoint-down(sm)
+    margin-top: 1.75rem
 
 .restaurants__item
   padding-bottom: 1.5rem
+  +media-breakpoint-up(md)
+    height: 100%
   .card
     border-radius: .375rem
     overflow: hidden
+    +media-breakpoint-up(md)
+      height: 100%
+      +position(relative)
   .card__body
     padding: .875rem .875rem .75rem
+    +media-breakpoint-up(md)
+      padding-bottom: 3rem
   .card__footer
     +padding(horizontal, .875rem)
+    +media-breakpoint-up(md)
+      +position(absolute, left 0, bottom 0, right 0)
 
 .restaurants__item-link
   text-decoration: none
@@ -32,7 +45,8 @@
   +size(100% 13rem)
   object-fit: cover
   transition: all .2s ease-out
-  background-color: yellow
+  +media-breakpoint-down(sm)
+    height: 8rem
   .restaurants__item-link:hover &
     opacity: .85
   & + .card__body
@@ -41,6 +55,8 @@
 .restaurants__item-name
   +text-block(1.125rem 1.4, 800 $default-text)
   transition: all .2s ease-out
+  +media-breakpoint-down(sm)
+    font-size: 1rem
   .restaurants__item-link:hover &
     text-decoration: underline
     color: $primary
@@ -49,6 +65,8 @@
   margin-top: .25rem
   p
     +text-block(.875rem 1.6, $default-text)
+    +media-breakpoint-down(sm)
+      font-size: .8125rem
 
 .restaurants__item-counts-items
   display: flex

@@ -1,8 +1,7 @@
 .flash
   +padding(vertical, 1rem)
   border: solid 1px
-  &.is-sm
-    +padding(vertical, .5rem)
+  display: block
   &.is-notice
     background-color: rgba($success, .3)
     border-color: $success
@@ -11,11 +10,8 @@
     background-color: rgba($danger, .3)
     border-color: $danger
     color: shade($danger, 50%)
-  input:checked + &,
-  &.is-shown
-    display: block
-  &.is-sticky
-    +position(sticky, top 0, 10)
+  input:checked + &
+    display: none
 
 .flash__inner
   display: flex
@@ -24,6 +20,13 @@
 .flash__body
   flex: 100
   text-align: center
+  li
+    +text-block(.875rem 1.5)
+  li:not(:first-child)
+    margin-top: .25rem
+
+.flash__title
+  +text-block(1rem 1.4 0 .5rem)
 
 .flash__close
   +size(2.75rem)

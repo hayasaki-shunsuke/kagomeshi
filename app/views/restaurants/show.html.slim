@@ -14,8 +14,6 @@
             header.card__header
               h2.card__title.is-lg
                 = @restaurant.name
-              - if @restaurant.image.attached?
-                = image_tag @restaurant.image.variant(resize: "600x600")
             .card__body
               .restaurant__description
                 h2.restaurant__description-title
@@ -24,6 +22,8 @@
                   p
                     = @restaurant.memo
               .restaurant__basic-data
+                - if @restaurant.image.attached?
+                  = image_tag @restaurant.image.variant(resize: "600x600"), class: "restaurant__main-image"
                 table.a-table
                   .tbody
                     tr

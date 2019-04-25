@@ -1,29 +1,28 @@
-- if @restaurant.errors.any?
-  #error_explanation
-    h2 = "#{pluralize(@restaurant.errors.count, "error")} prohibited this restaurant from being saved:"
-    ul
-      - @restaurant.errors.full_messages.each do |message|
-        li = message
-
-= form_for @restaurant, class: "form" do |f|
+.page__body
   .container.is-md
-    .form__items
-      .form__item
-        = f.label t(:name), class: "a-form-label"
-        = f.text_field :name, class: "a-text-input"
-      .form__item
-        = f.label t(:address), class: "a-form-label"
-        = f.text_field :address, class: "a-text-input"
-      .form__item
-        = f.label t(:business_hours), class: "a-form-label"
-        = f.text_area :business_hours, class: "a-text-input"
-      .form__item
-        = f.label t(:memo), class: "a-form-label"
-        = f.text_area :memo, class: "a-text-input"
-      .form__item
-        = f.label t(:image), class: "a-form-label"
-        = f.file_field :image, class: "a-text-input", type: "file"
-    .form__actions
-      ul.form__actions-items
-        li.form__actions-item
-          = f.submit class: "a-button is-md is-primary is-block"
+    .card
+      .card__body
+        = form_for @restaurant, class: "form" do |f|
+          .container.is-md
+            .form__items
+              .form__item
+                = f.label t(:name), class: "a-form-label"
+                = f.text_field :name, class: "a-text-input"
+              .form__item
+                = f.label t(:address), class: "a-form-label"
+                = f.text_field :address, class: "a-text-input"
+              .form__item
+                = f.label t(:business_hours), class: "a-form-label"
+                = f.text_area :business_hours, class: "a-text-input"
+              .form__item
+                = f.label t(:memo), class: "a-form-label"
+                = f.text_area :memo, class: "a-text-input is-md"
+              .form__item
+                = f.label t(:image), class: "a-form-label"
+                = f.file_field :image, class: "a-text-input", type: "file"
+            .form__actions
+              ul.form__actions-items
+                li.form__actions-item
+                  = f.submit class: "a-button is-md is-primary is-block"
+              .form__actions-back
+                = link_to t('back'), @restaurant, class: "form__actions-back-link"
