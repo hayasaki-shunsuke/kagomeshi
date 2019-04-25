@@ -8,7 +8,7 @@
           h2.restaurants__item-name
             = restaurant.name
           .restaurants__item-description
-            = simple_format(restaurant.memo)
+            p= truncate(restaurant.memo, length: 100)
           .restaurants__item-visitors
             .restaurants__item-visitors-items
               - restaurant.comments.distinct.each do |comment|
