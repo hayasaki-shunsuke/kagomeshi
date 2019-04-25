@@ -29,15 +29,8 @@
                     .restaurants__item-description
                       = simple_format(restaurant.memo)
                   .card__footer
-                    .restaurants__item-counts
-                      .restaurants__item-counts-items
-                        .restaurants__item-counts-item
-                          .restaurants__item-counts-item-label
-                            i.fas.fa-comment
-                          .restaurants__item-counts-item-number
-                            = restaurant.comments.count
-                        .restaurants__item-counts-item
-                          .restaurants__item-counts-item-label
-                            i.fas.fa-user
-                          .restaurants__item-counts-item-number
-                            | 100
+                    - restaurant.comments.distinct.each do |comment|
+                      - user = comment.user
+                      = link_to user do
+                        = image_tag user.avatar, alt: user.nickname, class: "comments__item-author-image"
+
