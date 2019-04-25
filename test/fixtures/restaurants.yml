@@ -1,62 +1,79 @@
 restaurant1:
-  name: レストラン1
-  address: 住所1
-  business_hours: 10:00-19:00
-  memo: メモ1
+  name: 焼肉なべしま 鹿児島インター店
+  address: 鹿児島市武2丁目16ー10
+  business_hours: 	［平日］
+                      夜営業：17:00〜24:00
+                      （オーダーストップ 23:30）  
+                    ［土・日・祝］
+                      11:00～24:00
+                      （オーダーストップ23:30）
+  memo: 鹿児島の焼肉といえばここ！なべしま三種盛りがおすすめ！
   created_at: 2010-01-01 00:00:01
 
 restaurant2:
-  name: レストラン2
-  address: 住所2
-  business_hours: 10:00-19:00
-  memo: メモ2
+  name: 寿しまどか アミュプラザ鹿児島店
+  address: 鹿児島市中央町1-1 アミュプラザB1
+  business_hours: 【月~木】
+                  　10:00～20:30(LO20:10)
+                  　入店ストップ20：00
+                  【金~日・祝日・祝前日】
+                  　10:00～21:00(LO20:40)
+                  　入店ストップ20：30
+  memo: イクラとウニがおすすめです！
   created_at: 2010-01-01 00:00:02
 
 restaurant3:
-  name: レストラン3
-  address: 住所3
-  business_hours: 10:00-19:00
-  memo: メモ3
+  name: とんかつ竹亭
+  address: 鹿児島県鹿児島市田上７丁目２−１４
+  business_hours: 17:00-21:30
+  memo: 肉がめっちゃジューシー！上とんかつ定食がおすすめ！
   created_at: 2010-01-01 00:00:03
 
 restaurant4:
-  name: レストラン4
-  address: 住所4
-  business_hours: 10:00-19:00
-  memo: メモ4
+  name: 爵肆庵（しゃくしあん）
+  address: 鹿児島県鹿児島市荒田２丁目７０－１１
+  business_hours: 10:00-22:00
+  memo: チャーハンが絶品！ボリューミーで満足間違いなし！
   created_at: 2010-01-01 00:00:04
 
 restaurant5:
-  name: レストラン5
-  address: 住所5
+  name: 凪
+  address: 鹿児島市中央町21-4　永井ビル1F
   business_hours: 10:00-19:00
-  memo: メモ5
+  memo: 刺身が美味しいお店！
   created_at: 2010-01-01 00:00:05
 
 restaurant6:
-  name: レストラン6
-  address: 住所6
-  business_hours: 10:00-19:00
-  memo: メモ6
+  name: カレーショップ90番
+  address: 鹿児島市中央町21-9
+  business_hours: 11:00-20:00
+  memo: チキンカレーががおすすめ！
   created_at: 2010-01-01 00:00:06
 
 restaurant7:
-  name: レストラン7
-  address: 住所7
-  business_hours: 10:00-19:00
-  memo: メモ7
+  name: 伊汰莉阿食堂 ちくらや
+  address: 鹿児島市中央町21-20 MMビル1F
+  business_hours: 17:00～24:00
+  memo: 紅ずわいがにの入ったトマトクリームスパゲティがおすすめ！
   created_at: 2010-01-01 00:00:07
 
 restaurant8:
-  name: レストラン8
-  address: 住所8
-  business_hours: 10:00-19:00
-  memo: メモ8
+  name: 船頭料理　魚庄（うおしょう）
+  address: 鹿児島市中央町24-18
+  business_hours: 10:00-24:00
+  memo: 焼酎飲むならここでしょ！鹿児島の焼酎なんでもあります！
   created_at: 2010-01-01 00:00:08
 
 restaurant9:
-  name: レストラン9
-  address: 住所9
-  business_hours: 10:00-19:00
-  memo: メモ9
+  name: PEACOCK（ピーコック）
+  address: 鹿児島市中央町21-8
+  business_hours: 18:00-26:00
+  memo: スペイン料理店!ピザがおすすめです！
   created_at: 2010-01-01 00:00:09
+
+restaurant10:
+  name: 吉屋（きちや）
+  address: 鹿児島市中央町21-9　畠中ビル1F
+  business_hours: 10:00-25:00
+  memo: 旬の素材を使ったお料理から定番のものまで約60種！！黒豚しゃぶしゃぶがおすすめ！
+  created_at: 2010-01-01 00:00:10
