@@ -32,3 +32,17 @@ ja:
       create: 登録
       submit: 保存
       update: 更新
+  comments:
+    create:
+      save: 新規登録しました。
+    update:
+      update: 更新しました。
+    destroy:
+      destroy: 削除しました。
+  restaurants:
+    create:
+      save: 新規登録しました。
+    update:
+      update: 更新しました。
+    destroy:
+      destroy: 削除しました。

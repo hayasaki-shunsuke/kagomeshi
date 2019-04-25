@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user = current_user
     if @comment.save
-      redirect_to @comment.restaurant, notice: 'Comment was successfully created.'
+      redirect_to @comment.restaurant, notice: t(:'.save')
     else
       render :new
     end
@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-      redirect_to @comment.restaurant, notice: 'Comment was successfully updated.'
+      redirect_to @comment.restaurant, notice: t(:'.update')
     else
       render :edit
     end
@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    redirect_to @comment.restaurant, notice: 'Comment was successfully destroyed.'
+    redirect_to @comment.restaurant, notice: t(:'.destroy')
   end
 
   private
