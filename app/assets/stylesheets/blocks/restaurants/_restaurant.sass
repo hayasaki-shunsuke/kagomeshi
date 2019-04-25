@@ -38,6 +38,7 @@
   +media-breakpoint-up(md)
     margin-top: 1.5rem
     display: flex
+    align-items: center
   +media-breakpoint-down(sm)
     margin-top: 1rem
   .a-table
@@ -50,10 +51,29 @@
 
 .restaurant__main-image
   object-fit: cover
+  border-radius: .25rem
   +media-breakpoint-up(md)
     flex-basis: 10rem
-    +size(10rem 7rem)
+    +size(10rem 7.375rem)
     margin-right: 1rem
   +media-breakpoint-down(sm)
-    +size(100% 7rem)
+    +size(100% 7.375rem)
     margin-bottom: 1rem
+
+.restaurants__item-visitors
+  margin-top: .5rem
+
+.restaurants__item-visitors-items
+  display: flex
+  flex-wrap: wrap
+  +margin(horizontal, -.125rem)
+  margin-bottom: -.25rem
+
+.restaurants__item-visitors-item
+  +padding(horizontal, .125rem)
+  flex-basis: 10%
+  margin-bottom: .25rem
+
+.restaurants__item-visitors-item-image
+  object-fit: cover
+  border-radius: 50%
