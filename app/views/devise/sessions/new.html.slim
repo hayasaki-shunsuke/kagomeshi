@@ -1,6 +1,5 @@
 - content_for(:extra_body_classes, "is-auth")
 
-
 .page__body
   .auth
     .container.is-xs
@@ -14,7 +13,6 @@
               .form__item
                 = f.label :email, class: "a-form-label"
                 = f.email_field :email, autofocus: true, autocomplete: "email", class: "a-text-input"
-                br
               .form__item
                 = f.label :password, class: "a-form-label"
                 = f.password_field :password, autocomplete: "current-password", class: "a-text-input"
