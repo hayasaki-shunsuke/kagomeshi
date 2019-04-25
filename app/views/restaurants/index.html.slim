@@ -17,20 +17,4 @@
     .restaurants__items
       .row
         - @restaurants.each do |restaurant|
-          .col-md-4
-            .restaurants__item
-              = link_to restaurant, class: "restaurants__item-link" do
-                .card
-                  - if restaurant.image.attached?
-                    = image_tag(restaurant.image, class: "restaurants__item-image", alt: "レストラン名ああああああ")
-                  .card__body
-                    h2.restaurants__item-name
-                      = restaurant.name
-                    .restaurants__item-description
-                      = simple_format(restaurant.memo)
-                  .card__footer
-                    - restaurant.comments.distinct.each do |comment|
-                      - user = comment.user
-                      = link_to user do
-                        = image_tag user.avatar, alt: user.nickname, class: "comments__item-author-image"
-
+          = render "restaurant", restaurant: restaurant
