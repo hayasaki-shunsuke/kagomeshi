@@ -37,7 +37,7 @@
                     tr
                       th 営業時間
                       td
-                        = @restaurant.business_hours
+                        = simple_format(@restaurant.business_hours)
             .card__footer
               // card__footer は admin だけ表示
               .card__actions
