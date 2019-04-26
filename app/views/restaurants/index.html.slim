@@ -11,9 +11,6 @@
         br
         | 鹿児島の夜は私たちにお任せください！美味しいかごメシを食べて最高の出張にしましょう！！
 
-#map
-script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsCu6vKmH7Bp4jGmHFTfe5QrRFYPqs5Wg&callback=initMap")
-
 .restaurants.page__body
   .container
     h1.restaurants__title
@@ -22,3 +19,6 @@ script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsCu6vKmH7Bp4jGmHF
       .row
         - @restaurants.each do |restaurant|
           = render "restaurant", restaurant: restaurant
+
+#map
+script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsCu6vKmH7Bp4jGmHFTfe5QrRFYPqs5Wg&callback=initMap")

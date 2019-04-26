@@ -11,8 +11,11 @@
             p= truncate(restaurant.memo, length: 100)
           .restaurants__item-visitors
             .restaurants__item-visitors-items
-              - restaurant.comments.distinct.each do |comment|
+              - comment_users = []
+              - restaurant.comments.each do |comment|
                 - user = comment.user
+                -  comment_users.push(user)
+              - comment_users.uniq.each do |user|
                 .restaurants__item-visitors-item
                   = image_tag user.avatar, alt: user.nickname, class: "restaurants__item-visitors-item-image"
 
@@ -28,4 +31,4 @@
                 .restaurants__item-counts-item-label
                   i.fas.fa-user
                 .restaurants__item-counts-item-number
-                  | 100
+                  = comment_users.uniq.count
