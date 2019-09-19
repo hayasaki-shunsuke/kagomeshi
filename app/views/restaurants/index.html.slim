@@ -5,7 +5,7 @@
   .container
     .main-visual__inner
       h1.main-visual__title
-        | 鹿児島を圧倒的にEnjoy!
+        | 鹿児島を圧倒的にEnjoy!!!
       .main-visual__description
         | 鹿児島オフィスチームが紹介する、かごメシを食べつくし！
         br
@@ -21,4 +21,4 @@
           = render "restaurant", restaurant: restaurant
 
 #map
-script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsCu6vKmH7Bp4jGmHFTfe5QrRFYPqs5Wg&callback=initMap")
+script(src=“https://maps.googleapis.com/maps/api/js?key=<%= ENV[‘GOOGLE_MAP_API’] %>&callback=initMap”)
