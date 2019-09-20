@@ -19,6 +19,3 @@
       .row
         - @restaurants.each do |restaurant|
           = render "restaurant", restaurant: restaurant
-
-#map
-script(src=“https://maps.googleapis.com/maps/api/js?key=<%= ENV[‘GOOGLE_MAP_API’] %>&callback=initMap”)
