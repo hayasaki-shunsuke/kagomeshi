@@ -7,3 +7,23 @@ production:
   password: <%= ENV["MC_DB_PASSWORD"] %>
   database: <%= ENV["MC_DATABASE"] %>
   host:     <%= ENV["MC_DB_HOSTNAME"] %>
+
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: kagomeshi_development
+  pool: 5
+  username: root
+  password:
+  host: localhost
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: kagomeshi_test
+  pool: 5
+  username: root
+  password:
+  host: localhost
