@@ -30,6 +30,8 @@ $ docker-compose run web bundle exec rake db:seed
 $ docker-compose up -d
 ```
 
+`localhost:3000`で立ち上がります。
+
 ### 2回目以降の起動
 
 ```
