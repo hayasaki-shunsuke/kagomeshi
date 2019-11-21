@@ -1,5 +1,4 @@
 default: &default
-  adapter: mysql2
   charset: utf8mb4
   encoding: utf8mb4
   collation: utf8mb4_general_ci
@@ -15,7 +14,8 @@ production:
   host:     <%= ENV["MC_DB_HOSTNAME"] %>
 
 development:
-  <<: *default
+  adapter: mysql2
+  encoding: utf8
   reconnect: false
   database: kagomeshi_development
   pool: 5
@@ -30,5 +30,5 @@ test:
   database: kagomeshi_test
   pool: 5
   username: root
-  password: password
-  host: db
+  password:
+  host: localhost
